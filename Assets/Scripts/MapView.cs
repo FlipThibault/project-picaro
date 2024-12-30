@@ -147,16 +147,24 @@ namespace Map
         {
             if(node.creatures == null)
             {
-                List<CreatureData> creaturesToAdd = EncounterBuilder.computeCreaturesForEncounter(GameManager.currentGame.partySize, GameManager.currentGame.partyLevel, node);
-                node.setCreatures(creaturesToAdd);
+                try {
+                    List<CreatureData> creaturesToAdd = EncounterBuilder.computeCreaturesForEncounter(GameManager.currentGame.partySize, GameManager.currentGame.partyLevel, node);
+                    node.setCreatures(creaturesToAdd);
+                } catch (Exception e) {
+                    Debug.LogError("SOMETHING WENT WRONG GENERATING CREATURES FOR NODE : " + e.Message);
+                }
             }
         }
         protected static void setupItems(Node node)
         {
             if (node.items == null)
             {
-                List<ItemData> itemsToAdd = EncounterBuilder.computeItemsForChest(GameManager.currentGame.partySize, GameManager.currentGame.partyLevel);
-                node.setItems(itemsToAdd);
+                try {
+                    List<ItemData> itemsToAdd = EncounterBuilder.computeItemsForChest(GameManager.currentGame.partySize, GameManager.currentGame.partyLevel);
+                    node.setItems(itemsToAdd);
+                } catch (Exception e) {
+                    Debug.LogError("SOMETHING WENT WRONG GENERATING ITEMS FOR NODE : " + e.Message);
+                }
             }
         }
 
@@ -164,8 +172,12 @@ namespace Map
         {
             if (node.treasure == 0)
             {
-                double treasure = EncounterBuilder.getTreasureForEncounter(GameManager.currentGame.partySize, GameManager.currentGame.partyLevel, node);
-                node.setTreasure(treasure);
+                try {
+                    double treasure = EncounterBuilder.getTreasureForEncounter(GameManager.currentGame.partySize, GameManager.currentGame.partyLevel, node);
+                    node.setTreasure(treasure);
+                } catch (Exception e) {
+                    Debug.LogError("SOMETHING WENT WRONG GENERATING TREASURE FOR NODE : " + e.Message);
+                }
             }
         }
 
@@ -173,8 +185,12 @@ namespace Map
         {
             if (node.boon == null)
             {
-                BoonData boonToAdd = EncounterBuilder.computeBoonForEncounter(GameManager.currentGame.partySize, GameManager.currentGame.partyLevel, node);
-                node.setBoon(boonToAdd);
+                try {
+                    BoonData boonToAdd = EncounterBuilder.computeBoonForEncounter(GameManager.currentGame.partySize, GameManager.currentGame.partyLevel, node);
+                    node.setBoon(boonToAdd);
+                } catch (Exception e) {
+                    Debug.LogError("SOMETHING WENT WRONG GENERATING BOON FOR NODE : " + e.Message);
+                }
             }
         }
 
