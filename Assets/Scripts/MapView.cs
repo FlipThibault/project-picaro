@@ -147,7 +147,7 @@ namespace Map
         {
             if(node.creatures == null)
             {
-                List<CreatureData> creaturesToAdd = EncounterBuilder.computeCreaturesForEncounter(GameManager.currentGame.GetPartySize(), GameManager.currentGame.GetPartyLevel(), node);
+                List<CreatureData> creaturesToAdd = EncounterBuilder.computeCreaturesForEncounter(GameManager.currentGame.partySize, GameManager.currentGame.partyLevel, node);
                 node.setCreatures(creaturesToAdd);
             }
         }
@@ -155,7 +155,7 @@ namespace Map
         {
             if (node.items == null)
             {
-                List<ItemData> itemsToAdd = EncounterBuilder.computeItemsForChest(GameManager.currentGame.GetPartySize(), GameManager.currentGame.GetPartyLevel());
+                List<ItemData> itemsToAdd = EncounterBuilder.computeItemsForChest(GameManager.currentGame.partySize, GameManager.currentGame.partyLevel);
                 node.setItems(itemsToAdd);
             }
         }
@@ -164,7 +164,7 @@ namespace Map
         {
             if (node.treasure == 0)
             {
-                double treasure = EncounterBuilder.getTreasureForEncounter(GameManager.currentGame.GetPartySize(), GameManager.currentGame.GetPartyLevel(), node);
+                double treasure = EncounterBuilder.getTreasureForEncounter(GameManager.currentGame.partySize, GameManager.currentGame.partyLevel, node);
                 node.setTreasure(treasure);
             }
         }
@@ -173,7 +173,7 @@ namespace Map
         {
             if (node.boon == null)
             {
-                BoonData boonToAdd = EncounterBuilder.computeBoonForEncounter(GameManager.currentGame.GetPartySize(), GameManager.currentGame.GetPartyLevel(), node);
+                BoonData boonToAdd = EncounterBuilder.computeBoonForEncounter(GameManager.currentGame.partySize, GameManager.currentGame.partyLevel, node);
                 node.setBoon(boonToAdd);
             }
         }

@@ -486,22 +486,7 @@ MonoBehaviour:
   m_Value: 0
   m_MultiSelect: 0
   m_Options:
-    m_Options:
-    - m_Text: Darklands
-      m_Image: {fileID: 0}
-      m_Color: {r: 1, g: 1, b: 1, a: 1}
-    - m_Text: Dungeon
-      m_Image: {fileID: 0}
-      m_Color: {r: 1, g: 1, b: 1, a: 1}
-    - m_Text: Forest
-      m_Image: {fileID: 0}
-      m_Color: {r: 1, g: 1, b: 1, a: 1}
-    - m_Text: Graveyard
-      m_Image: {fileID: 0}
-      m_Color: {r: 1, g: 1, b: 1, a: 1}
-    - m_Text: Outerrealm
-      m_Image: {fileID: 0}
-      m_Color: {r: 1, g: 1, b: 1, a: 1}
+    m_Options: []
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -826,7 +811,7 @@ GameObject:
   - component: {fileID: 185835848}
   - component: {fileID: 185835849}
   m_Layer: 5
-  m_Name: Text Area
+  m_Name: TextArea
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1071,14 +1056,14 @@ MonoBehaviour:
   m_VerticalScrollbarEventHandler: {fileID: 0}
   m_LayoutGroup: {fileID: 0}
   m_ScrollSensitivity: 1
-  m_ContentType: 0
+  m_ContentType: 2
   m_InputType: 0
   m_AsteriskChar: 42
-  m_KeyboardType: 0
+  m_KeyboardType: 4
   m_LineType: 0
   m_HideMobileInput: 0
   m_HideSoftKeyboard: 0
-  m_CharacterValidation: 0
+  m_CharacterValidation: 2
   m_RegexValue: 
   m_GlobalPointSize: 50
   m_CharacterLimit: 0
@@ -1310,9 +1295,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60690655b397bd04c9fe786978c1ec57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  partyName: {fileID: 0}
-  partySize: {fileID: 0}
-  partyLevel: {fileID: 0}
 --- !u!4 &368768904
 Transform:
   m_ObjectHideFlags: 0
@@ -1344,7 +1326,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &426816153
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1377,9 +1359,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d8ce466b3a2641c28d86a5358a35d06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  partyNameInput: {fileID: 0}
-  partySizeInput: {fileID: 0}
-  partyLevelInput: {fileID: 0}
 --- !u!1 &486734006
 GameObject:
   m_ObjectHideFlags: 0
@@ -4745,10 +4724,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 255549016}
-        m_TargetAssemblyTypeName: SceneManagerScript, Assembly-CSharp
-        m_MethodName: LoadScene
-        m_Mode: 5
+      - m_Target: {fileID: 426816154}
+        m_TargetAssemblyTypeName: NewRunMenu, Assembly-CSharp
+        m_MethodName: createGame
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -4756,7 +4735,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: Map
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 1
 --- !u!114 &1706251604
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5094,14 +5073,14 @@ MonoBehaviour:
   m_VerticalScrollbarEventHandler: {fileID: 0}
   m_LayoutGroup: {fileID: 0}
   m_ScrollSensitivity: 1
-  m_ContentType: 0
+  m_ContentType: 2
   m_InputType: 0
   m_AsteriskChar: 42
-  m_KeyboardType: 0
+  m_KeyboardType: 4
   m_LineType: 0
   m_HideMobileInput: 0
   m_HideSoftKeyboard: 0
-  m_CharacterValidation: 0
+  m_CharacterValidation: 2
   m_RegexValue: 
   m_GlobalPointSize: 50
   m_CharacterLimit: 2

@@ -1,16 +1,20 @@
+using Map;
+using Newtonsoft.Json;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class NewRunMenu : MonoBehaviour
 {
-    public TMP_InputField partyNameInput;
-    public TMP_InputField partySizeInput;
-    public TMP_InputField partyLevelInput;
+    private TMP_InputField partyNameInput;
+    private TMP_InputField partySizeInput;
+    private TMP_InputField partyLevelInput;
+    private TMP_Dropdown environmentDropdown;
 
     private Game game;
 
-    void initializePartyNameInput() 
+    private void initializePartyNameInput() 
     {
         Transform partyNameInputTransform = transform.Find("Panel/PartyName/PartyNameInput");
         if (partyNameInputTransform != null)
@@ -28,7 +32,7 @@ public class NewRunMenu : MonoBehaviour
         }
     }
 
-    void initializePartyLevelInput() 
+    private void initializePartyLevelInput() 
     {
         Transform partyLevelInputTransform = transform.Find("Panel/PartyLevel/PartyLevelNumber");
         if (partyLevelInputTransform != null)
@@ -46,7 +50,7 @@ public class NewRunMenu : MonoBehaviour
         }
     }
 
-    void initializePartySizeInput() 
+    private void initializePartySizeInput() 
     {
         Transform partySizeInputTransform = transform.Find("Panel/PartySize/PartySizeNumber");
         if (partySizeInputTransform != null)
@@ -64,22 +68,53 @@ public class NewRunMenu : MonoBehaviour
         }
     }
 
+        // Listener for dropdown value changes
+    private void OnEnvironmentDropdownValueChanged(int index)
+    {
+        environmentDropdown.value = index;
+        environmentDropdown.RefreshShownValue();
+    }
+
     void initializeEnvironmentDropdown() 
     {
-        Transform partySizeInputTransform = transform.Find("Panel/PartySize/PartySizeNumber");
-        if (partySizeInputTransform != null)
+        Transform environmentDropdownTransform = transform.Find("Panel/Environment/EnvironmentDropdown/TextArea/Dropdown");
+        if (environmentDropdownTransform != null)
         {
-            partySizeInput = partySizeInputTransform.GetComponent<TMP_InputField>();
+            environmentDropdown = environmentDropdownTransform.GetComponent<TMP_Dropdown>();
         }
 
-        if (partySizeInput != null)
+        if (environmentDropdown != null)
         {
-            partySizeInput.text = game.partySize.ToString();
+            foreach (Environment env in System.Enum.GetValues(typeof(Environment)))
+            {
+                // Convert enum value to string representation
+                string envString = env.ToString();
+
+                // Output the enum value
+                environmentDropdown.options.Add(new TMP_Dropdown.OptionData(envString));
+            }
+            environmentDropdown.RefreshShownValue();
+            environmentDropdown.value = 0;
+            environmentDropdown.onValueChanged.AddListener(OnEnvironmentDropdownValueChanged);
         }
         else
         {
-            Debug.LogError("Could not find PartySize field");
+            Debug.LogError("Could not find Enviroment dropdown field");
         }
+    }
+
+    private void setGameValues() {
+        game.gameName = partyNameInput.text;
+        game.partyLevel = int.Parse(partyLevelInput.text);
+        game.partySize = int.Parse(partySizeInput.text);
+        game.environment = (Environment)System.Enum.GetValues(typeof(Environment)).GetValue(environmentDropdown.value);
+    }
+
+    public void createGame() {
+        setGameValues();
+        string gameJson = JsonConvert.SerializeObject(game, Formatting.Indented, new JsonSerializerSettings { ReferenceLoopHandling = ReferenceLoopHandling.Ignore });
+        PlayerPrefs.SetString("Game", gameJson);
+        SceneManager.LoadScene("Map");
     }
 
     void Start()
@@ -91,15 +126,4 @@ public class NewRunMenu : MonoBehaviour
         initializeEnvironmentDropdown();
     }
 
-    void OnDestroy()
-    {
-    }
-
-
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
