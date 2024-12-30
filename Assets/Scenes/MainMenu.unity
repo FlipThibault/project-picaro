@@ -713,7 +713,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -2.6999, y: 349.3}
-  m_SizeDelta: {x: 403.051, y: 53.1603}
+  m_SizeDelta: {x: 785.0448, y: 53.1603}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &184383644
 MonoBehaviour:
@@ -735,7 +735,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Party Size
+  m_text: Party Name
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 02f90a58b2b23bd43842cf93694bd122, type: 2}
   m_sharedMaterial: {fileID: 7935898562151179809, guid: 02f90a58b2b23bd43842cf93694bd122,
@@ -1342,7 +1342,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &426816153
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3188,7 +3188,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 2.7, y: -72}
-  m_SizeDelta: {x: 883.4806, y: 66.0451}
+  m_SizeDelta: {x: 581.6583, y: 66.0451}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1116241022
 MonoBehaviour:
