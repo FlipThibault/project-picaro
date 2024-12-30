@@ -131,7 +131,7 @@ namespace Map
                 // we have access to blueprint name here as well
                 if (mapNode.Node.nodeType == NodeType.MinorEnemy || mapNode.Node.nodeType == NodeType.EliteEnemy || mapNode.Node.nodeType == NodeType.Boss)
                 {
-                    List<PotionData> potionsToAdd = EncounterBuilder.computePotionsForEncounter(GameManager.currentGame.GetPartySize(), GameManager.currentGame.GetPartyLevel(), mapNode.Node);
+                    List<PotionData> potionsToAdd = EncounterBuilder.computePotionsForEncounter(GameManager.currentGame.partySize, GameManager.currentGame.partyLevel, mapNode.Node);
                     mapNode.Node.setPotions(potionsToAdd);
                 }
 
@@ -141,11 +141,8 @@ namespace Map
 
         private void PlayWarningThatNodeCannotBeAccessed(MapNode mapNode)
         {
-            //EnterNode(mapNode);
             Debug.Log("Selected node cannot be accessed");
-
             logData(mapNode.Node);
-
         }
     }
 }

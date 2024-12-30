@@ -16,24 +16,17 @@ namespace Map
         {
             if (PlayerPrefs.HasKey("Game"))
             {
-                //GameManager.currentGame
+                string gameJson = PlayerPrefs.GetString("Game");
+                Game game = JsonConvert.DeserializeObject<Game>(gameJson);
+                GameManager.currentGame = game;
             }
             if (PlayerPrefs.HasKey("Map"))
             {
                 string mapJson = PlayerPrefs.GetString("Map");
                 Map map = JsonConvert.DeserializeObject<Map>(mapJson);
-                // using this instead of .Contains()
-                if (map.path.Any(p => p.Equals(map.GetBossNode().point)))
-                {
-                    // payer has already reached the boss, generate a new map
-                    GenerateNewMap();
-                }
-                else
-                {
-                    CurrentMap = map;
-                    // player has not reached the boss yet, load the current map
-                    view.ShowMap(map);
-                }
+
+                CurrentMap = map;
+                view.ShowMap(map);
             }
             else
             {
@@ -69,9 +62,9 @@ namespace Map
             PlayerPrefs.SetString("MysteryLikelihood", mysteryRoomTypeLikelihoodJson);
             Debug.Log("SAVING MysteryLikelihood: " + mysteryRoomTypeLikelihoodJson.ToString());
 
-            PlayerPrefs.Save();
+            // PlayerPrefs.Save();
 
-            string filepath = Application.persistentDataPath + "/" + GameManager.currentGame.GetGameName() + ".json";
+            string filepath = Application.persistentDataPath + "/" + GameManager.currentGame.gameName + ".json";
             Debug.Log("GAME SAVING AT LOCATION: " + filepath);
             SaveData saveData = new SaveData(GameManager.currentGame, CurrentMap, PotionGenerator.getCurrentPotionLikelihoodPercentage(), MysteryGenerator.getCurrentMysteryRoomTypeLikelihoodPercentage());
             string saveDataJson = JsonConvert.SerializeObject(saveData, Formatting.Indented, new JsonSerializerSettings { ReferenceLoopHandling = ReferenceLoopHandling.Ignore });

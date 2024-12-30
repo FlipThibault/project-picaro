@@ -78,7 +78,7 @@ public static class EncounterBuilder
             List<CreatureData> eligibleEncounterCreatures = allCreatures.FindAll(creature =>
                 creature.level >= partyLevel - 2 &&
                 creature.level <= partyLevel + 2 &&
-                creature.environment.Contains(GameManager.currentGame.GetEnvironment()) && 
+                creature.environment.Contains(GameManager.currentGame.environment) && 
                 computeXpForCreatureLevel(creature.level, partyLevel) <= remainingBudget);
 
             if (eligibleEncounterCreatures.Count == 0)

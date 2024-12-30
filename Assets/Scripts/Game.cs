@@ -1,67 +1,39 @@
 ﻿using System.Collections;
+using Map;
+using Newtonsoft.Json;
 using UnityEngine;
 
-[System.Serializable]
-public class Game
-{
-    public int partySize = 5;
-    public int partyLevel = 1;
-    public Environment environment = Environment.Outerrealm;
-    public string gameName = "default";
-
-    // Default constructor
-    public Game()
+namespace Map {
+    [System.Serializable]
+    public class Game
     {
-        // You can initialize the default values here if needed
-    }
+        public int partySize { get; set; }
+        public int partyLevel  { get; set; }
+        public Environment environment { get; set; }
+        public string gameName { get; set; }
 
-    // Constructor with parameters to initialize all fields
-    public Game(int partySize, int partyLevel, Environment environment, string gameName)
-    {
-        this.partySize = partySize;
-        this.partyLevel = partyLevel;
-        this.environment = environment;
-        this.gameName = gameName;
-    }
+        public Game()
+        {
+            partySize = 5;
+            partyLevel = 1;
+            environment = Environment.Outerrealm;
+            gameName = "default";
+        }
 
-    // Getters and Setters
-    public int GetPartySize()
-    {
-        return partySize;
-    }
+        public Game(int partySize, int partyLevel, Environment environment, string gameName)
+        {
+            this.partySize = partySize;
+            this.partyLevel = partyLevel;
+            this.environment = environment;
+            this.gameName = gameName;
+        }
 
-    public void SetPartySize(int value)
-    {
-        partySize = value;
-    }
-
-    public int GetPartyLevel()
-    {
-        return partyLevel;
-    }
-
-    public void SetPartyLevel(int value)
-    {
-        partyLevel = value;
-    }
-
-    public Environment GetEnvironment()
-    {
-        return environment;
-    }
-
-    public void SetEnvironment(Environment value)
-    {
-        environment = value;
-    }
-
-    public string GetGameName()
-    {
-        return gameName;
-    }
-
-    public void SetGameName(string value)
-    {
-        gameName = value;
+        public string ToJson()
+        {
+            return JsonConvert.SerializeObject(this, Formatting.Indented, new JsonSerializerSettings
+            {
+                ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+            });
+        }
     }
 }
