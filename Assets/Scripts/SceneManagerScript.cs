@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class SceneManagerScript : MonoBehaviour
 {
-    public void LoadSceneAsync(string Map)
+    public void LoadScene(string Map)
     {
         SceneManager.LoadScene(Map);
     }
