@@ -151,15 +151,12 @@ namespace Map
                 if (Node.creatures != null && Node.creatures.Count > 0)
                 {
                     info.text += "CREATURES\n\n";
-                }
 
-                foreach (var creature in Node.creatures)
-                {
-                    info.text += "Name: " + creature.name + "\n";
-                }
+                    foreach (var creature in Node.creatures)
+                    {
+                        info.text += "Name: " + creature.name + "\n";
+                    }
 
-                if (Node.creatures != null && Node.creatures.Count > 0)
-                {
                     info.text += "--------------------------\n\n";
                 }
 
@@ -172,35 +169,28 @@ namespace Map
                 if (Node.items != null && Node.items.Count > 0)
                 {
                     info.text += "ITEMS \n\n";
-                }
 
-                foreach (var item in Node.items)
-                {
-                    info.text += "Name: " + item.name + "\n";
-                    info.text += "Price: " + item.price + "\n";
-                    info.text += "Rarity: " + item.rarity + "\n";
-                }
+                    foreach (var item in Node.items)
+                    {
+                        info.text += "Name: " + item.name + "\n";
+                        info.text += "Price: " + item.price + "\n";
+                        info.text += "Rarity: " + item.rarity + "\n";
+                    }
 
-                if (Node.items != null && Node.items.Count > 0)
-                {
                     info.text += "--------------------------\n\n";
                 }
-
 
                 if (Node.potions != null && Node.potions.Count > 0)
                 {
                     info.text += "POTIONS \n\n";
-                }
 
-                foreach (var potion in Node.potions)
-                {
-                    info.text += "Name: " + potion.name + "\n";
-                    info.text += "Price: " + potion.price + "\n";
-                    info.text += "Rarity: " + potion.rarity + "\n";
-                }
+                    foreach (var potion in Node.potions)
+                    {
+                        info.text += "Name: " + potion.name + "\n";
+                        info.text += "Price: " + potion.price + "\n";
+                        info.text += "Rarity: " + potion.rarity + "\n";
+                    }
 
-                if (Node.potions != null && Node.potions.Count > 0)
-                {
                     info.text += "--------------------------\n\n";
                 }
 
