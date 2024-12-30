@@ -67,8 +67,6 @@ public class NewRunMenu : MonoBehaviour
             Debug.LogError("Could not find PartySize field");
         }
     }
-
-        // Listener for dropdown value changes
     private void OnEnvironmentDropdownValueChanged(int index)
     {
         environmentDropdown.value = index;
@@ -111,6 +109,7 @@ public class NewRunMenu : MonoBehaviour
     }
 
     public void createGame() {
+        PlayerPrefs.DeleteAll();
         setGameValues();
         string gameJson = JsonConvert.SerializeObject(game, Formatting.Indented, new JsonSerializerSettings { ReferenceLoopHandling = ReferenceLoopHandling.Ignore });
         PlayerPrefs.SetString("Game", gameJson);
@@ -124,6 +123,10 @@ public class NewRunMenu : MonoBehaviour
         initializePartyLevelInput();
         initializePartySizeInput();
         initializeEnvironmentDropdown();
+    }
+
+    void Destroy() {
+        environmentDropdown.onValueChanged.RemoveAllListeners();
     }
 
 }

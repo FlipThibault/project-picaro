@@ -141,11 +141,8 @@ namespace Map
 
         private void PlayWarningThatNodeCannotBeAccessed(MapNode mapNode)
         {
-            //EnterNode(mapNode);
             Debug.Log("Selected node cannot be accessed");
-
             logData(mapNode.Node);
-
         }
     }
 }

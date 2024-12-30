@@ -28,9 +28,9 @@ namespace Map
             this.nodeType = nodeType;
             this.blueprintName = blueprintName;
             this.point = point;
-            this.creatures = new List<CreatureData>();
-            this.items = new List<ItemData>();
-            this.potions = new List<PotionData>();
+            this.creatures = null;
+            this.items = null;
+            this.potions = null;
             this.boon = null;
             this.treasure = 0;
         }
