@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using Map;
 using UnityEngine;
 
 namespace Assets.Scripts
@@ -12,10 +13,10 @@ namespace Assets.Scripts
         // Use this for initialization
         void Start()
         {
-            if (currentGame == null)
-            {
-                currentGame = new Game();
-            }
+            // if (currentGame == null)
+            // {
+            //     currentGame = new Game();
+            // }
         }
 
         // Update is called once per frame

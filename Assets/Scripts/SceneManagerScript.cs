@@ -1,12 +1,13 @@
 using System;
 using System.Collections.Generic;
+using Assets.Scripts;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class SceneManagerScript : MonoBehaviour
 {
-    public void LoadSceneAsync(string Map)
+    public void LoadScene(string sceneName)
     {
-        SceneManager.LoadScene(Map);
+        SceneManager.LoadScene(sceneName);
     }
 }

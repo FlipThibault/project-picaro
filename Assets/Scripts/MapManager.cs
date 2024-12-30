@@ -16,7 +16,9 @@ namespace Map
         {
             if (PlayerPrefs.HasKey("Game"))
             {
-                //GameManager.currentGame
+                string gameJson = PlayerPrefs.GetString("Game");
+                Game game = JsonConvert.DeserializeObject<Game>(gameJson);
+                GameManager.currentGame = game;
             }
             if (PlayerPrefs.HasKey("Map"))
             {
@@ -26,7 +28,7 @@ namespace Map
                 if (map.path.Any(p => p.Equals(map.GetBossNode().point)))
                 {
                     // payer has already reached the boss, generate a new map
-                    GenerateNewMap();
+                    // GenerateNewMap();
                 }
                 else
                 {
@@ -71,7 +73,7 @@ namespace Map
 
             PlayerPrefs.Save();
 
-            string filepath = Application.persistentDataPath + "/" + GameManager.currentGame.GetGameName() + ".json";
+            string filepath = Application.persistentDataPath + "/" + GameManager.currentGame.gameName + ".json";
             Debug.Log("GAME SAVING AT LOCATION: " + filepath);
             SaveData saveData = new SaveData(GameManager.currentGame, CurrentMap, PotionGenerator.getCurrentPotionLikelihoodPercentage(), MysteryGenerator.getCurrentMysteryRoomTypeLikelihoodPercentage());
             string saveDataJson = JsonConvert.SerializeObject(saveData, Formatting.Indented, new JsonSerializerSettings { ReferenceLoopHandling = ReferenceLoopHandling.Ignore });
