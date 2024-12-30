@@ -24,6 +24,6 @@ MonoBehaviour:
     customDrawer:
       value: 0
     cullingOptimization:
-      value: 2
+      value: 0
     cacheOptimization:
       value: 0

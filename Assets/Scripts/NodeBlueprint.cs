@@ -10,7 +10,7 @@ namespace Map
         Treasure,
         Store,
         Boss,
-        Mystery
+        Mystery,
     }
 }
 

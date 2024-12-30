@@ -14,15 +14,53 @@ namespace Map
         [JsonConverter(typeof(StringEnumConverter))]
         public readonly NodeType nodeType;
         public readonly string blueprintName;
+        [JsonConverter(typeof(StringEnumConverter))]
+        public MysteryRoomType? mysteryNodeType;
         public Vector2 position;
+        public List<CreatureData> creatures;
+        public List<ItemData> items;
+        public List<PotionData> potions;
+        public BoonData boon;
+        public double treasure;
 
         public Node(NodeType nodeType, string blueprintName, Vector2Int point)
         {
             this.nodeType = nodeType;
             this.blueprintName = blueprintName;
             this.point = point;
+            this.creatures = new List<CreatureData>();
+            this.items = new List<ItemData>();
+            this.potions = new List<PotionData>();
+            this.boon = null;
+            this.treasure = 0;
         }
 
+        public void setCreatures(List<CreatureData> creatures)
+        {
+            this.creatures = creatures;
+        }
+
+        public void setTreasure(double treasure)
+        {
+            this.treasure = treasure;
+        }
+        public void setItems(List<ItemData> items)
+        {
+            this.items = items;
+        }
+        public void setPotions(List<PotionData> potions)
+        {
+            this.potions = potions;
+        }
+        public void setBoon(BoonData boon)
+        {
+            this.boon = boon;
+        }
+
+        public void setMysteryNodeType(MysteryRoomType mysteryNodeType)
+        {
+            this.mysteryNodeType = mysteryNodeType;
+        }
         public void AddIncoming(Vector2Int p)
         {
             if (incoming.Any(element => element.Equals(p)))

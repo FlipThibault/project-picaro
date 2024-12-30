@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Assets.Scripts;
 using UnityEngine;
 
 namespace Map
@@ -142,11 +143,67 @@ namespace Map
             }
         }
 
+        public static void setupCreatures(Node node)
+        {
+            if(node.creatures == null)
+            {
+                List<CreatureData> creaturesToAdd = EncounterBuilder.computeCreaturesForEncounter(GameManager.currentGame.GetPartySize(), GameManager.currentGame.GetPartyLevel(), node);
+                node.setCreatures(creaturesToAdd);
+            }
+        }
+        protected static void setupItems(Node node)
+        {
+            if (node.items == null)
+            {
+                List<ItemData> itemsToAdd = EncounterBuilder.computeItemsForChest(GameManager.currentGame.GetPartySize(), GameManager.currentGame.GetPartyLevel());
+                node.setItems(itemsToAdd);
+            }
+        }
+
+        protected static void setupTreasure(Node node)
+        {
+            if (node.treasure == 0)
+            {
+                double treasure = EncounterBuilder.getTreasureForEncounter(GameManager.currentGame.GetPartySize(), GameManager.currentGame.GetPartyLevel(), node);
+                node.setTreasure(treasure);
+            }
+        }
+
+        protected static void setupBoon(Node node)
+        {
+            if (node.boon == null)
+            {
+                BoonData boonToAdd = EncounterBuilder.computeBoonForEncounter(GameManager.currentGame.GetPartySize(), GameManager.currentGame.GetPartyLevel(), node);
+                node.setBoon(boonToAdd);
+            }
+        }
+
+        public static void setupNodeByType(Node node)
+        {
+            if (node.nodeType == NodeType.MinorEnemy || node.nodeType == NodeType.EliteEnemy)
+            {
+                setupCreatures(node);
+            }
+            if (node.nodeType == NodeType.Treasure)
+            {
+                setupItems(node);
+            }
+            if (node.nodeType == NodeType.Boss || node.nodeType == NodeType.EliteEnemy)
+            {
+                setupBoon(node);
+            }
+            if (node.nodeType == NodeType.MinorEnemy || node.nodeType == NodeType.EliteEnemy || node.nodeType == NodeType.Boss)
+            {
+                setupTreasure(node);
+            }
+        }
+
         protected virtual MapNode CreateMapNode(Node node)
         {
             GameObject mapNodeObject = Instantiate(nodePrefab, mapParent.transform);
             MapNode mapNode = mapNodeObject.GetComponent<MapNode>();
             NodeBlueprint blueprint = GetBlueprint(node.blueprintName);
+            setupNodeByType(node);
             mapNode.SetUp(node, blueprint);
             mapNode.transform.localPosition = node.position;
             return mapNode;

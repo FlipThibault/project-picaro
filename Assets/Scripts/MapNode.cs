@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Linq;
 using DG.Tweening;
+using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -23,6 +25,8 @@ namespace Map
         public SpriteRenderer visitedCircle;
         public Image circleImage;
         public Image visitedCircleImage;
+        private TextMeshProUGUI info;
+        private GameObject encounterInfoPanel;
 
         public Node Node { get; private set; }
         public NodeBlueprint Blueprint { get; private set; }
@@ -54,7 +58,11 @@ namespace Map
                 circleImage.color = MapView.Instance.visitedColor;
                 circleImage.gameObject.SetActive(false);    
             }
-            
+
+            encounterInfoPanel = FindObjectsOfType<GameObject>(true).FirstOrDefault(obj => obj.name == "EncounterInfoPanel");
+
+            info = encounterInfoPanel.GetComponentsInChildren<TextMeshProUGUI>(true)[0];
+
             SetState(NodeStates.Locked);
         }
 
@@ -130,6 +138,85 @@ namespace Map
                 image.transform.DOKill();
                 image.transform.DOScale(initialScale * HoverScaleFactor, 0.3f);
             }
+            if (info != null)
+            {
+                info.text = "";
+
+                if(Node.nodeType == NodeType.Mystery)
+                {
+                    info.text += "MYSTERY: " + Node.mysteryNodeType.ToString() + "\n\n";
+                    info.text += "--------------------------\n\n";
+                }
+
+                if (Node.creatures != null && Node.creatures.Count > 0)
+                {
+                    info.text += "CREATURES\n\n";
+                }
+
+                foreach (var creature in Node.creatures)
+                {
+                    info.text += "Name: " + creature.name + "\n";
+                }
+
+                if (Node.creatures != null && Node.creatures.Count > 0)
+                {
+                    info.text += "--------------------------\n\n";
+                }
+
+                if (Node.treasure != 0)
+                {
+                    info.text += "GOLD: " + Node.treasure + "\n";
+                    info.text += "--------------------------\n\n";
+                }
+
+                if (Node.items != null && Node.items.Count > 0)
+                {
+                    info.text += "ITEMS \n\n";
+                }
+
+                foreach (var item in Node.items)
+                {
+                    info.text += "Name: " + item.name + "\n";
+                    info.text += "Price: " + item.price + "\n";
+                    info.text += "Rarity: " + item.rarity + "\n";
+                }
+
+                if (Node.items != null && Node.items.Count > 0)
+                {
+                    info.text += "--------------------------\n\n";
+                }
+
+
+                if (Node.potions != null && Node.potions.Count > 0)
+                {
+                    info.text += "POTIONS \n\n";
+                }
+
+                foreach (var potion in Node.potions)
+                {
+                    info.text += "Name: " + potion.name + "\n";
+                    info.text += "Price: " + potion.price + "\n";
+                    info.text += "Rarity: " + potion.rarity + "\n";
+                }
+
+                if (Node.potions != null && Node.potions.Count > 0)
+                {
+                    info.text += "--------------------------\n\n";
+                }
+
+                if (Node.boon != null)
+                {
+                    info.text += "BOON \n\n";
+
+                    info.text += "Name: " + Node.boon.name + "\n";
+                }
+                else
+                {
+                    info.text += "NO BOON" + "\n";
+                }
+
+            }
+            encounterInfoPanel.SetActive(true);
         }
 
         public void OnPointerExit(PointerEventData data)
@@ -145,6 +232,8 @@ namespace Map
                 image.transform.DOKill();
                 image.transform.DOScale(initialScale, 0.3f);
             }
+            //encounterInfoPanel.SetActive(false);
+
         }
 
         public void OnPointerDown(PointerEventData data)
@@ -170,21 +259,6 @@ namespace Map
             visitedCircleImage.fillAmount = 0;
 
             DOTween.To(() => visitedCircleImage.fillAmount, x => visitedCircleImage.fillAmount = x, 1f, fillDuration);
-        }
-
-        private void OnDestroy()
-        {
-            if (image != null)
-            {
-                image.transform.DOKill();
-                image.DOKill();
-            }
-
-            if (sr != null)
-            {
-                sr.transform.DOKill();
-                sr.DOKill();
-            }
         }
     }
 }

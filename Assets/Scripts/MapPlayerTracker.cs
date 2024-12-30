@@ -1,6 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
+using Assets.Scripts;
 using DG.Tweening;
+using Newtonsoft.Json;
 using UnityEngine;
 
 namespace Map
@@ -33,7 +36,7 @@ namespace Map
                 if (mapNode.Node.point.y == 0)
                     SendPlayerToNode(mapNode);
                 else
-                    PlayWarningThatNodeCannotBeAccessed();
+                    PlayWarningThatNodeCannotBeAccessed(mapNode);
             }
             else
             {
@@ -43,7 +46,7 @@ namespace Map
                 if (currentNode != null && currentNode.outgoing.Any(point => point.Equals(mapNode.Node.point)))
                     SendPlayerToNode(mapNode);
                 else
-                    PlayWarningThatNodeCannotBeAccessed();
+                    PlayWarningThatNodeCannotBeAccessed(mapNode);
             }
         }
 
@@ -51,7 +54,7 @@ namespace Map
         {
             Locked = lockAfterSelecting;
             mapManager.CurrentMap.path.Add(mapNode.Node.point);
-            mapManager.SaveMap();
+            mapManager.SaveGame();
             view.SetAttainableNodes();
             view.SetLineColors();
             mapNode.ShowSwirlAnimation();
@@ -59,37 +62,90 @@ namespace Map
             DOTween.Sequence().AppendInterval(enterNodeDelay).OnComplete(() => EnterNode(mapNode));
         }
 
-        private static void EnterNode(MapNode mapNode)
+        private static void logData(Node mapNode)
         {
-            // we have access to blueprint name here as well
-            Debug.Log("Entering node: " + mapNode.Node.blueprintName + " of type: " + mapNode.Node.nodeType);
-            // load appropriate scene with context based on nodeType:
-            // or show appropriate GUI over the map: 
-            // if you choose to show GUI in some of these cases, do not forget to set "Locked" in MapPlayerTracker back to false
-            switch (mapNode.Node.nodeType)
+            foreach (var creature in mapNode.creatures)
             {
-                case NodeType.MinorEnemy:
-                    break;
-                case NodeType.EliteEnemy:
-                    break;
-                case NodeType.RestSite:
-                    break;
-                case NodeType.Treasure:
-                    break;
-                case NodeType.Store:
-                    break;
-                case NodeType.Boss:
-                    break;
-                case NodeType.Mystery:
-                    break;
-                default:
-                    throw new ArgumentOutOfRangeException();
+                Debug.Log("Creature: " + creature.name + " level: " + creature.level);
+                Debug.Log("Creature environments: ");
+                foreach (var env in creature.environment)
+                {
+                    Debug.Log(env);
+                }
+            }
+            foreach (var item in mapNode.items)
+            {
+                Debug.Log("Item: " + item.name + " level: " + item.level + " price: " + item.price);
+            }
+            foreach (var potion in mapNode.potions)
+            {
+                Debug.Log("Potion: " + potion.name + " level: " + potion.level + " price: " + potion.price + " rarity: " + potion.rarity);
+            }
+            if (mapNode.boon != null)
+            {
+                Debug.Log("BOON: " + mapNode.boon.name + " description: " + mapNode.boon.description + " rarity: " + mapNode.boon.rarity);
+            }
+            else
+            {
+                Debug.Log("NO BOON");
+            }
+            if (mapNode.treasure != 0)
+            {
+                Debug.Log("TREASURE: " + mapNode.treasure + "gp");
             }
         }
 
-        private void PlayWarningThatNodeCannotBeAccessed()
+        private static void EnterNode(MapNode mapNode)
         {
+
+            Debug.Log("----------------------------------------------------------");
+
+            Debug.Log("Entering node: " + mapNode.Node.blueprintName + " of type: " + mapNode.Node.nodeType);
+
+            if (mapNode.Node.nodeType == NodeType.Mystery)
+            {
+
+                MysteryRoomType computedRoomType = MysteryGenerator.computeMysteryRoomType();
+                mapNode.Node.setMysteryNodeType(computedRoomType);
+
+                switch (computedRoomType)
+                {
+                    case MysteryRoomType.MinorEnemy:
+                    case MysteryRoomType.Treasure:
+                        Debug.Log("MYSTERY ROOM TYPE IS: " + computedRoomType.ToString());
+                        MapView.setupNodeByType(mapNode.Node);
+                        break;
+                    case MysteryRoomType.Store:
+                        Debug.Log("MYSTERY ROOM TYPE IS: STORE");
+                        break;
+                    case MysteryRoomType.DemonDoor:
+                        Debug.Log("MYSTERY ROOM TYPE IS: DEMON DOOR");
+                        break;
+                    default:
+                        Debug.Log("MYSTERY ROOM TYPE IS:EVENT");
+                        break;
+                }
+            }
+            else
+            {
+                // we have access to blueprint name here as well
+                if (mapNode.Node.nodeType == NodeType.MinorEnemy || mapNode.Node.nodeType == NodeType.EliteEnemy || mapNode.Node.nodeType == NodeType.Boss)
+                {
+                    List<PotionData> potionsToAdd = EncounterBuilder.computePotionsForEncounter(GameManager.currentGame.GetPartySize(), GameManager.currentGame.GetPartyLevel(), mapNode.Node);
+                    mapNode.Node.setPotions(potionsToAdd);
+                }
+
+                logData(mapNode.Node);
+            }
+        }
+
+        private void PlayWarningThatNodeCannotBeAccessed(MapNode mapNode)
+        {
+            //EnterNode(mapNode);
             Debug.Log("Selected node cannot be accessed");
+
+            logData(mapNode.Node);
+
         }
     }
 }

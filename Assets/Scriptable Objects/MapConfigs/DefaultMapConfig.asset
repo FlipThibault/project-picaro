@@ -22,13 +22,14 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 3cd24b2e276b6dc48a3c3842ff38a96c, type: 2}
   - {fileID: 11400000, guid: e1635866d1c2f154e8c9045bd0e000f2, type: 2}
   - {fileID: 11400000, guid: dfb2651849bbba640970aec1f4b8601f, type: 2}
+  randomNodes: 060000000000000004000000060000000100000002000000
   numOfPreBossNodes:
     min: 4
     max: 5
   numOfStartingNodes:
     min: 3
     max: 4
-  extraPaths: 0
+  extraPaths: 2
   layers:
   - nodeType: 0
     distanceFromPreviousLayer:
@@ -37,27 +38,27 @@ MonoBehaviour:
     nodesApartDistance: 2
     randomizePosition: 0
     randomizeNodes: 0
+  - nodeType: 6
+    distanceFromPreviousLayer:
+      min: 2
+      max: 3
+    nodesApartDistance: 2
+    randomizePosition: 0.5
+    randomizeNodes: 0.5
   - nodeType: 0
     distanceFromPreviousLayer:
       min: 2
       max: 3
     nodesApartDistance: 2
-    randomizePosition: 0.587
-    randomizeNodes: 0.728
+    randomizePosition: 0.5
+    randomizeNodes: 0.237
   - nodeType: 0
-    distanceFromPreviousLayer:
-      min: 2
-      max: 3
-    nodesApartDistance: 2
-    randomizePosition: 0.509
-    randomizeNodes: 0
-  - nodeType: 3
     distanceFromPreviousLayer:
       min: 2
       max: 3
     nodesApartDistance: 2
     randomizePosition: 0.542
-    randomizeNodes: 0.739
+    randomizeNodes: 0.329
   - nodeType: 0
     distanceFromPreviousLayer:
       min: 2
@@ -65,13 +66,13 @@ MonoBehaviour:
     nodesApartDistance: 2
     randomizePosition: 0.176
     randomizeNodes: 0.739
-  - nodeType: 0
+  - nodeType: 3
     distanceFromPreviousLayer:
       min: 2
       max: 3
     nodesApartDistance: 2
     randomizePosition: 0.649
-    randomizeNodes: 0.739
+    randomizeNodes: 0
   - nodeType: 0
     distanceFromPreviousLayer:
       min: 2

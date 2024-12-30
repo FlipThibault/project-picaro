@@ -1,0 +1,504 @@
+{
+    "boons": [
+        {
+            "name": "Arcane Reflection",
+            "description": "Once per encounter, reflect a spell targeting you back at the caster.",
+            "rarity": "Legendary"
+        },
+        {
+            "name": "Temporal Shift",
+            "description": "Take two turns in a single round once per day.",
+            "rarity": "Legendary"
+        },
+        {
+            "name": "Unyielding Spirit",
+            "description": "Once per day, avoid being reduced below 1 hit point.",
+            "rarity": "Legendary"
+        },
+        {
+            "name": "Vampiric Grasp",
+            "description": "Recover temporary hit points equal to damage dealt by a melee critical hit.",
+            "rarity": "Legendary"
+        },
+        {
+            "name": "Planar Key",
+            "description": "Open portals to the Ethereal Plane at will.",
+            "rarity": "Legendary"
+        },
+        {
+            "name": "Chain Lightning",
+            "description": "Critical hits jump to a secondary target within 10 feet, dealing 1d8 lightning damage.",
+            "rarity": "Legendary"
+        },
+        {
+            "name": "Explosive Arrows",
+            "description": "Ranged attacks explode in a 5-foot radius, dealing splash damage equal to half the attack’s damage.",
+            "rarity": "Legendary"
+        },
+        {
+            "name": "Soulfire",
+            "description": "Killing an enemy causes them to explode in radiant flames, dealing 1d6 fire damage to adjacent creatures.",
+            "rarity": "Legendary"
+        },
+        {
+            "name": "Living Fortress",
+            "description": "Gain a +4 bonus to Fortitude saves against poisons or diseases.",
+            "rarity": "Legendary"
+        },
+        {
+            "name": "Ethereal Jaunt",
+            "description": "Once per encounter, teleport 60 feet to a location you can see, ignoring obstacles and terrain.",
+            "rarity": "Legendary"
+        },
+        {
+            "name": "Grave Resilience",
+            "description": "Reduce negative energy damage taken by 5.",
+            "rarity": "Legendary"
+        },
+        {
+            "name": "Blessing of the Tortoise",
+            "description": "Immune to forced movement effects.",
+            "rarity": "Legendary"
+        },
+        {
+            "name": "Death Sap",
+            "description": "Gain +1 to any ability for each enemy you kill (max 8.) You lose half of your stacks when knocked unconscious.",
+            "rarity": "Legendary"
+        },
+        {
+            "name": "Runic Compass",
+            "description": "Prevent hazards, traps and enemy encounters from appearing in mystery rooms. Once per level you can change a room to be a treasure room.",
+            "rarity": "Legendary"
+        },
+        {
+            "name": "Phase Step",
+            "description": "Once per day, become incorporeal for 1 minute.",
+            "rarity": "Legendary"
+        },
+        {
+            "name": "Eternal Vitality",
+            "description": "Automatically stabilize if reduced to 0 HP.",
+            "rarity": "Rare"
+        },
+        {
+            "name": "Devastating Critical",
+            "description": "Increase the critical damage multiplier by 1 once per turn.",
+            "rarity": "Rare"
+        },
+        {
+            "name": "Mystic Sight",
+            "description": "See invisible creatures within 60 feet.",
+            "rarity": "Rare"
+        },
+        {
+            "name": "Bane of the Undead",
+            "description": "Weapon attacks deal 1d6 positive energy damage against undead.",
+            "rarity": "Rare"
+        },
+        {
+            "name": "Explosive Finisher",
+            "description": "Add 1d8 fire damage to your final Strike in an attack action.",
+            "rarity": "Rare"
+        },
+        {
+            "name": "Fang of the Beast",
+            "description": "Unarmed attacks gain the Deadly d10 trait.",
+            "rarity": "Rare"
+        },
+        {
+            "name": "Thunderclap Blade",
+            "description": "Melee attacks cause a burst of sound, dealing 1d4 sonic damage to nearby enemies.",
+            "rarity": "Rare"
+        },
+        {
+            "name": "Blessing of the Sea",
+            "description": "Gain resistance 5 to cold damage and treat all water as non-difficult terrain. Additionally, gain a +1 circumstance bonus to Athletics checks made to Swim.",
+            "rarity": "Rare"
+        },
+        {
+            "name": "Radiant Blade",
+            "description": "Your weapon glows, adding 1d4 positive energy damage to your attacks.",
+            "rarity": "Rare"
+        },
+        {
+            "name": "Arcane Conduit",
+            "description": "Once per turn, after hitting an enemy with a melee attack, deal an additional 1d6 force damage to all adjacent enemies.",
+            "rarity": "Rare"
+        },
+        {
+            "name": "Steel Resolve",
+            "description": "Gain a +1 status bonus to AC against ranged attacks.",
+            "rarity": "Rare"
+        },
+        {
+            "name": "Runic Shell",
+            "description": "Gain temporary hit points equal to your level at the start of each turn.",
+            "rarity": "Rare"
+        },
+        {
+            "name": "Shadow Cloak",
+            "description": "Once per day, turn invisible for 1 minute.",
+            "rarity": "Rare"
+        },
+        {
+            "name": "Sundering Blows",
+            "description": "Gain a +4 circumstance bonus to damage when attacking objects or armor.",
+            "rarity": "Rare"
+        },
+        {
+            "name": "Fiery Resolve",
+            "description": "Once per turn, convert 1d4 of your weapon damage to fire damage.",
+            "rarity": "Rare"
+        },
+        {
+            "name": "Celestial Flame",
+            "description": "Your attacks deal 1d6 radiant damage to fiends.",
+            "rarity": "Rare"
+        },
+        {
+            "name": "Sheltering Shadows",
+            "description": "Gain concealment (DC 11 flat check) in dim light or darkness.",
+            "rarity": "Rare"
+        },
+        {
+            "name": "Blessing of the Faithful",
+            "description": "Automatically succeed on your first saving throw against a spell each day.",
+            "rarity": "Rare"
+        },
+        {
+            "name": "Mystic Archer",
+            "description": "Your ranged attacks gain a +1 circumstance bonus to hit, and critical hits reduce the target's Speed by 10 feet for 1 round.",
+            "rarity": "Rare"
+        },
+        {
+            "name": "Gravity’s Pull",
+            "description": "Targets struck by you are pulled 5 feet closer.",
+            "rarity": "Rare"
+        },
+        {
+            "name": "Draconic Scales",
+            "description": "Gain resistance 5 to acid, cold, fire, or lightning damage.",
+            "rarity": "Rare"
+        },
+        {
+            "name": "Unseen Steps",
+            "description": "Gain the effects of Pass Without Trace constantly.",
+            "rarity": "Rare"
+        },
+        {
+            "name": "Fortified Mind",
+            "description": "Gain a +1 status bonus to saves against mental effects.",
+            "rarity": "Rare"
+        },
+        {
+            "name": "Quickened Steps",
+            "description": "Gain a +10-foot bonus to Speed.",
+            "rarity": "Rare"
+        },
+        {
+            "name": "Phantasmal Barrage",
+            "description": "Illusory duplicates of your weapon attack adjacent enemies, dealing 1d6 damage.",
+            "rarity": "Rare"
+        },
+        {
+            "name": "Stone Skin",
+            "description": "Gain resistance 3 to physical damage.",
+            "rarity": "Uncommon"
+        },
+        {
+            "name": "Razor's Edge",
+            "description": "Gain a +2 status bonus to damage rolls with slashing weapons.",
+            "rarity": "Uncommon"
+        },
+        {
+            "name": "Thunderous Impact",
+            "description": "Add 1d8 sonic damage to melee or ranged critical hits.",
+            "rarity": "Uncommon"
+        },
+        {
+            "name": "Venomous Touch",
+            "description": "Critical hits with melee weapons apply the poisoned 1 condition.",
+            "rarity": "Uncommon"
+        },
+        {
+            "name": "Dizzying Strikes",
+            "description": "On a critical hit, impose the flat-footed condition for 1 round.",
+            "rarity": "Uncommon"
+        },
+        {
+            "name": "Adaptive Ward",
+            "description": "Gain resistance 5 to the last damage type that hit you for 1 round.",
+            "rarity": "Uncommon"
+        },
+        {
+            "name": "Blessing of the Wild",
+            "description": "Once per day, summon an animal companion for 10 minutes as if using the Animal Ally feat.",
+            "rarity": "Uncommon"
+        },
+        {
+            "name": "Quick Drawmastery",
+            "description": "Gain a +2 status bonus to hit on attacks made immediately after drawing a weapon.",
+            "rarity": "Uncommon"
+        },
+        {
+            "name": "Eternal Bond",
+            "description": "Adjacent allies gain a +1 circumstance bonus to AC.",
+            "rarity": "Uncommon"
+        },
+        {
+            "name": "Mirror Form",
+            "description": "Once per day, create an illusory duplicate that causes an attack to miss.",
+            "rarity": "Uncommon"
+        },
+        {
+            "name": "Icebound Aegis",
+            "description": "Gain resistance 5 to cold damage and immunity to environmental cold.",
+            "rarity": "Uncommon"
+        },
+        {
+            "name": "Blazing Heart",
+            "description": "Gain resistance 5 to fire damage and immunity to environmental heat.",
+            "rarity": "Uncommon"
+        },
+        {
+            "name": "True Strike Mastery",
+            "description": "Once per day, cast True Strike as a free action.",
+            "rarity": "Uncommon"
+        },
+        {
+            "name": "Poison Mastery",
+            "description": "Add 1d6 persistent poison damage to your weapon attacks.",
+            "rarity": "Uncommon"
+        },
+        {
+            "name": "Divine Wrath",
+            "description": "Once per day, deal an extra 3d6 damage to a creature with an opposing alignment.",
+            "rarity": "Uncommon"
+        },
+        {
+            "name": "Frostbite",
+            "description": "Attacks reduce the target’s Speed by 5 feet for 1 round.",
+            "rarity": "Uncommon"
+        },
+        {
+            "name": "Spectral Precision",
+            "description": "Ranged attacks target touch AC against incorporeal creatures.",
+            "rarity": "Uncommon"
+        },
+        {
+            "name": "Ghost Hunter",
+            "description": "Weapons deal full damage to incorporeal creatures.",
+            "rarity": "Uncommon"
+        },
+        {
+            "name": "Hunter’s Instinct",
+            "description": "Your attacks ignore the effects of concealment.",
+            "rarity": "Uncommon"
+        },
+        {
+            "name": "Piercing Vision",
+            "description": "Ranged attacks ignore total concealment within 30 feet.",
+            "rarity": "Uncommon"
+        },
+        {
+            "name": "Second Wind",
+            "description": "Recover 10 hit points as a free action once per encounter.",
+            "rarity": "Uncommon"
+        },
+        {
+            "name": "Indomitable Will",
+            "description": "Gain a +2 status bonus to Will saves.",
+            "rarity": "Uncommon"
+        },
+        {
+            "name": "Timeless Body",
+            "description": "Gain a +1 status bonus to Fortitude saves and resistance 3 to poison and disease.",
+            "rarity": "Uncommon"
+        },
+        {
+            "name": "Ethereal Bond",
+            "description": "Communicate with spirits or ghosts at will.",
+            "rarity": "Uncommon"
+        },
+        {
+            "name": "Divine Recall",
+            "description": "Reroll one failed saving throw or skill check per day.",
+            "rarity": "Uncommon"
+        },
+        {
+            "name": "Shatterer",
+            "description": "Weapon attacks ignore hardness less than 10.",
+            "rarity": "Uncommon"
+        },
+        {
+            "name": "Arcane Feedback",
+            "description": "Spells that deal damage add 1d6 of the same type of damage.",
+            "rarity": "Uncommon"
+        },
+        {
+            "name": "Blessing of the Tortoise",
+            "description": "Immune to forced movement effects.",
+            "rarity": "Uncommon"
+        },
+        {
+            "name": "Warden’s Guide",
+            "description": "Gain a +1 circumstance bonus to Nature checks and your attacks deal an extra 1d6 damage against beasts.",
+            "rarity": "Uncommon"
+        },
+        {
+            "name": "Phantom Dodge",
+            "description": "Move 5 feet as a free action once per round after being attacked.",
+            "rarity": "Uncommon"
+        },
+        {
+            "name": "Stone Skin",
+            "description": "Gain resistance 3 to physical damage.",
+            "rarity": "Uncommon"
+        },
+        {
+            "name": "Razor's Edge",
+            "description": "Gain a +2 status bonus to damage rolls with slashing weapons.",
+            "rarity": "Uncommon"
+        },
+        {
+            "name": "Thunderous Impact",
+            "description": "Add 1d8 sonic damage to melee or ranged critical hits.",
+            "rarity": "Uncommon"
+        },
+        {
+            "name": "Venomous Touch",
+            "description": "Critical hits with melee weapons apply the poisoned 1 condition.",
+            "rarity": "Uncommon"
+        },
+        {
+            "name": "Dizzying Strikes",
+            "description": "On a critical hit, impose the flat-footed condition for 1 round.",
+            "rarity": "Uncommon"
+        },
+        {
+            "name": "Adaptive Ward",
+            "description": "Gain resistance 5 to the last damage type that hit you for 1 round.",
+            "rarity": "Uncommon"
+        },
+        {
+            "name": "Blessing of the Wild",
+            "description": "Once per day, summon an animal companion for 10 minutes as if using the Animal Ally feat.",
+            "rarity": "Uncommon"
+        },
+        {
+            "name": "Quick Drawmastery",
+            "description": "Gain a +2 status bonus to hit on attacks made immediately after drawing a weapon.",
+            "rarity": "Uncommon"
+        },
+        {
+            "name": "Eternal Bond",
+            "description": "Adjacent allies gain a +1 circumstance bonus to AC.",
+            "rarity": "Uncommon"
+        },
+        {
+            "name": "Mirror Form",
+            "description": "Once per day, create an illusory duplicate that causes an attack to miss.",
+            "rarity": "Uncommon"
+        },
+        {
+            "name": "Icebound Aegis",
+            "description": "Gain resistance 5 to cold damage and immunity to environmental cold.",
+            "rarity": "Uncommon"
+        },
+        {
+            "name": "Blazing Heart",
+            "description": "Gain resistance 5 to fire damage and immunity to environmental heat.",
+            "rarity": "Uncommon"
+        },
+        {
+            "name": "True Strike Mastery",
+            "description": "Once per day, cast True Strike as a free action.",
+            "rarity": "Uncommon"
+        },
+        {
+            "name": "Poison Mastery",
+            "description": "Add 1d6 persistent poison damage to your weapon attacks.",
+            "rarity": "Uncommon"
+        },
+        {
+            "name": "Divine Wrath",
+            "description": "Once per day, deal an extra 3d6 damage to a creature with an opposing alignment.",
+            "rarity": "Uncommon"
+        },
+        {
+            "name": "Frostbite",
+            "description": "Attacks reduce the target’s Speed by 5 feet for 1 round.",
+            "rarity": "Uncommon"
+        },
+        {
+            "name": "Spectral Precision",
+            "description": "Ranged attacks target touch AC against incorporeal creatures.",
+            "rarity": "Uncommon"
+        },
+        {
+            "name": "Ghost Hunter",
+            "description": "Weapons deal full damage to incorporeal creatures.",
+            "rarity": "Uncommon"
+        },
+        {
+            "name": "Hunter’s Instinct",
+            "description": "Your attacks ignore the effects of concealment.",
+            "rarity": "Uncommon"
+        },
+        {
+            "name": "Piercing Vision",
+            "description": "Ranged attacks ignore total concealment within 30 feet.",
+            "rarity": "Uncommon"
+        },
+        {
+            "name": "Second Wind",
+            "description": "Recover 10 hit points as a free action once per encounter.",
+            "rarity": "Uncommon"
+        },
+        {
+            "name": "Indomitable Will",
+            "description": "Gain a +2 status bonus to Will saves.",
+            "rarity": "Uncommon"
+        },
+        {
+            "name": "Timeless Body",
+            "description": "Your body ages slower; halve the effects of aging penalties.",
+            "rarity": "Uncommon"
+        },
+        {
+            "name": "Ethereal Bond",
+            "description": "Communicate with spirits or ghosts at will.",
+            "rarity": "Uncommon"
+        },
+        {
+            "name": "Divine Recall",
+            "description": "Reroll one failed saving throw or skill check per day.",
+            "rarity": "Uncommon"
+        },
+        {
+            "name": "Shatterer",
+            "description": "Weapon attacks ignore hardness less than 10.",
+            "rarity": "Uncommon"
+        },
+        {
+            "name": "Arcane Feedback",
+            "description": "Spells that deal damage add 1d6 of the same type of damage.",
+            "rarity": "Uncommon"
+        },
+        {
+            "name": "Blessing of the Tortoise",
+            "description": "Immune to forced movement effects.",
+            "rarity": "Uncommon"
+        },
+        {
+            "name": "Warden’s Guide",
+            "description": "Once per day, gain the benefits of Speak with Animals for 10 minutes.",
+            "rarity": "Uncommon"
+        },
+        {
+            "name": "Phantom Dodge",
+            "description": "Move 5 feet as a free action once per round after being attacked.",
+            "rarity": "Uncommon"
+        }
+    ]
+}
