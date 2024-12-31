@@ -1,0 +1,128 @@
+{
+    "events": [
+        {
+            "name": "Jousting Match",
+            "description": "You come across a group of lively Kobolds in a large circle. As you approach you see two small froglike humanoids dressed as knights. One is riding a small cat and another riding a small pig and are preparing for what likes to be a joust.\n'Place your bets here! Place your bets here!' Says one dapperly dressed Kobold wearing a top hat.\n*DM Note*: If players wish to bet the buy-in is 20gp X their level. They're made aware of the odds before betting.\nPig: 70% chance to double bet.\nCat: 30% chance to win 5 times the amount bet.",
+            "rewardType": "custom"
+        },
+        {
+            "name": "Drinking Contest",
+            "description": "An Ogre is seated under a tree having a drink. As you approach you get the scent of a really strong alcohol. 'Care for a challenge of chugs? Win an' I'll offer ya a blessin'.'\n*I'm In*: 'Here, here!' The Ogre's Fortitude Save is the player's level +6. The first one who fails twice loses. If the player wins they receive a boon. If they fail they take 2d6 poison damage. If they critically fail they take double the damage and they receive Clumsy 1 until the end of the next room.\n*I'm out*: 'Coward!' The ogre yells as he downs another mug of beer.",
+            "rewardType": "boon"
+        },
+        {
+            "name": "The Acidic Ooze",
+            "description": "You come across a large blob of blackish, reddish ooze and there looks to be something shiny in the center of it.\n*Reach Inside*: \nIf level 1-5 Take 1d4 acid damage.\nIf level 6-10 take 1d6 acid damage.\nIf level 11-15 take 1d8 acid damage.\nIf level 15-20 take 1d10 of acid damage.\nFor a 25% chance of finding a Boon. Players can repeat this step to add 10% to their chances.\n*Leave*.",
+            "rewardType": "boon"
+        },
+        {
+            "name": "Dead Adventurer",
+            "description": "You come across the remains of a dead adventurer.\n*Search*: Roll a 1d100. If 1-75 then it is a success. If 75-100 it is a fail. Once an enemy is encountered players cannot try again.\n*Success*: Roll a d6. If 1-2 you find a level-appropriate Severe gold reward. If 3-4 a random Boon. If 5-6 a chest reward.\n*Fail*: Severe encounter.\n*Search Again*: Roll another d100, increasing the likelihood of a Severe encounter by 25%, can only be done twice.\n*Escape*: You head out, thankfully not running into whatever done them in.",
+            "rewardType": "custom",
+            "encounterType": "Severe"
+        },
+        {
+            "name": "The Plague Doctor",
+            "description": "You come across a strange-looking man wearing an even stranger-looking leather mask with a long nose and goggles. As you approach he says: 'Hello, fair adventurer. A brave one you must be, traversing this maze-like place. It just so happens that I am in need of brave folk such as yourself. I wonder, would you be willing to participate in an experiment? All for the name of science, of course.'\n*Yes*: 'Perfect, let us begin.' - Receive the 2nd to last stage of a level-appropriate random disease and receive 3.5x the amount of a Severe gold reward.\n*No*: 'What a shame...'",
+            "rewardType": "custom"
+        },
+        {
+            "name": "Puddles of Acid",
+            "description": "As you're walking you step upon a loose stone and slip, a pouch of your gold falls out of your pocket and, unfortunately, into a bubbling translucent green bubbling substance. The smell of it burns your nostrils, upon inspecting it further you notice that there's an additional pouch of gold within. What do you do?\n*Reach to grab the gold*: If level 1-5 Take 2d4 acid damage, if level 6-10 take 2d6 acid damage, if level 11-15 take 2d8 acid damage, if level 5-20 take 2d10 of acid damage and add a moderate encounter worth of gold.\n*Leave*: Lose a moderate encounter worth of gold.",
+            "encounterType": "Moderate",
+            "rewardType": "Treasure"
+        },
+        {
+            "name": "The Bloodsmith",
+            "description": "You hear the sound of a hammer striking down on an anvil. You approach to see a red-skinned goblin working at a forge. 'Greetings brave ones! Bloodsmith is the name and my steelwork is the finest in the world. It comes with a price, however, your life force itself!'\n*Upgrade*: Receive a rune up to 1 level higher than yours on up to 2 weapons/armors/shield but take 15% of your max HP as damage. 'Goooooooood!'\n*Refuse*: 'You'll regret that, they all do.'"
+        },
+        {
+            "name": "The Duplication Pool",
+            "description": "You find a surprisingly serene scene. A calm pool, stone crafted in the middle of a clearing. Words inscribed on the stone at the foot of the pool read: 'One enters and two return.'\n*Drop an item in*: For a moment the item floats in the pool, soon after another of the same exact item rises up to the surface of the pool.\n*Leave*."
+        },
+        {
+            "name": "Abandoned Lab",
+            "description": "You come across an abandoned lab of what looks to be an alchemist. Most of the potions look to be smashed but perhaps you can find something salvageable.\n*Search*: Standard Level Perception DC\n*Critical Success*: You find 2 potions.\n*Success*: You find 1 potion.\n*Fail*: You find nothing.",
+            "rewardType": "Custom"
+        },
+        {
+            "name": "The Boon of Doom",
+            "description": "You come across a strange altar that fills you with an uncomfortable feeling as you approach. You hear a voice in your head: 'Pray to me and I promise you power.'\nIf the players wish and only under their own interest and suggestion, they can perform a hard, level-appropriate, secret Recall Knowledge Religion or Occultism check. If the players have experienced this event before then choose a different true name for the God:\n*Critical Success*: You remember Oolag, the God of Pain's true name and evoke the prayer of his people and receive a boon of at least the uncommon level with no penalty. Roll a d100.\n*Success*: You've heard rumors of a God like this before and know that he demands pain but always delivers upon his promises. Roll a 1d4, you will receive that level of drained (cannot exceed your total health) if you choose to pray to him.\n*Fail*: (DM Note: tell the player an incorrect name of the God, they do however, recall that this is the God of Pain) If they choose to pray, roll a d4 and add 1. They receive that level of drained.\n*Critical Fail*: Same as fail; however, they completely mistake the God for another, they also receive Doomed 1.\n*Pray*: Receive 1d4 of drained (cannot exceed your total health) and receive a boon of at least uncommon rarity. Roll a d100:\n1-65: uncommon boon; 66-90: rare boon; 91-100: legendary boon.\n*Leave*.",
+            "rewardType": "Boon"
+        },
+        {
+            "name": "The Statues",
+            "description": "Before you stands 4 different statues standing in front of platforms. One of a cleric, one of a wizard, one of a warrior, and one of a sickly rogue. On the floor of the cleric's platform an inscription reads 'I offer healing.' On the floor of the wizard an inscription reads 'I offer replenishment.' On the Warrior an inscription reads 'I offer a challenge.' On the floor of the Rogue's platform an inscription reads: 'I offer a boon, at a cost.'\n*The Cleric*: If they pray to the Cleric, one player receives:\nLevel 1-5: Critical Trained Treat Wounds\nLevel 6-10: Expert\nLevel 11-15: Master\nLevel 15-20: Legendary\n*The Wizard*: If they pray to the Wizard, one player receives:\nRestore half your level's worth (min 1) of spell slots.\n*The Warrior*: If they pray to the Warrior the player receives a severe encounter, standard rewards.\n*The Rogue*: If they pray to the Rogue, one player receives one boon and 1d4 level of a level-appropriate disease.",
+            "rewardType": "Boon"
+        },
+        {
+            "name": "The Cleric",
+            "description": "A lone robed being in a grey robe approaches you. 'Hello traveler, you look injured. Are you in need of healing?' her voice is soft and gentle.\n*Heal*: For 1.2x the gp reward for a moderate encounter she casts a 2-action, level-appropriate Heal.\n*Cleanse Affliction*: For 1.5x the gp reward for a moderate encounter she casts Cleanse Affliction."
+        },
+        {
+            "name": "The Mysterious Well",
+            "description": "A well made of pure white marble stone rests still and serene. As you approach you see an engraving on the stone that reads: 'If you wish to see it again, leave it behind.'\n*Drop an item into the well*: The item floats for a moment then disappears with a blue spark of energy as it sinks.\n(If an item was previously dropped in a previous run, an item must be placed in exchange.)\n*Pull up the bucket*: Receive the item and lose an item."
+        },
+        {
+            "name": "The Warrior",
+            "description": "You come across a large, grizzled warrior. As you approach he turns to you. 'Show me the blood of your enemies, show me your strength! Do so and my blessings upon you.'\n*Attempt the challenge*: Fight the previous level's Boss and receive a rare Boon and double the gold reward.\n*Leave*."
+        },
+        {
+            "name": "The Golden Idol",
+            "description": "You come across a golden medallion resting upon a pedestal. The shine of it entices you, you've never seen something so bright in your life. A Djinn appears as you approach the pedestal. 'This medallion is all yours... for a payment of course: Life, vitality, or healthiness.'\n*Life*: If level 1-5 Take 2d4 negative damage, if level 6-10 take 2d6 negative damage, if level 11-15 take 2d8 negative damage, if level 15-20 take 2d10 negative damage.\n*Healthiness*: 1d4 level of a level-appropriate disease.\n*Vitality*: Drained 2.",
+            "rewardType": "Golden Medallion (Multiplies ALL gold income by 1.25)"
+        },
+        {
+            "name": "Treasure!",
+            "description": "You come across a chest seemingly hidden on a less travelled path. (DM Notes: it's trapped with a level-appropriate trap.)",
+            "rewardType": "Items"
+        },
+        {
+            "name": "Leap of Faith",
+            "description": "The path ahead is a series of 3 separated platforms. Looks like you can jump across if you're careful enough.\nStandard Athletics DC.\n*Fail*: You misjudge the jump and unfortunately fall a bit short. DC 20 Acrobatics check to grab the edge, if you fail that then you fall:\nLevel 1-5: 20 feet.\nLevel 6-10: 30 feet.\nLevel 11-15: 40 feet.\nLevel 16-20: 50 feet."
+        },
+        {
+            "name": "The Hunt",
+            "description": "You come across a lone hunter, once he realizes you approach he turns to you and says.\n'I've been hunting an elusive prey for what feels like forever. Damn thing keeps getting away, do you think you can go out there and find it? I'll give ya a blessing if you bring it back, dead.'\n1. Attempt a level-appropriate Survival check.\n2. Once tracked deal at least 15 damage with one blow to a Warg without it noticing you first.\n*Success*: After returning to the hunter with the Warg he says 'thank you so much, stranger. Blessings upon you.' He then stares at you, incredibly still. You get the feeling that you should leave, immediately.\n*Fail*: 'Ah, what a shame.' the hunter says when you return. He packs up his things then leaves without saying goodbye or looking in your direction. He doesn't take the path from which you came but rather he walks straight and directly into the wilderness. Arms at his side, not even paying attention to the environment around him obstructing his ways.",
+            "rewardType": "Boon"
+        },
+        {
+            "name": "Lost",
+            "description": "Somehow, someway it seems you've lost your way in this strange, cursed dungeon. Standard Level Survival DC.\n*Critical Success*: Not only do you find your way back but you also happen to find a sack full of potions that you must have overlooked. The party received half of their level's worth of potions.\n*Success*: You manage to find your way back, thankfully not taking too much time to do so.\n*Fail*: You clumsily manage to finally find your way back, tripping and stumbling along the way. From now until the first round of the next combat encounter you are clumsy 1.\n*Critical Fail*: You fumble around like an absolute mess and somehow find your way back on the path. Same as fail except clumsy 2."
+        },
+        {
+            "name": "Cover Tracks",
+            "description": "You get the uncomfortable feeling that you're being followed.\nCover tracks Hard DC.\n*Critical Success*: As you're covering your tracks you happen to come by a hidden cache. You receive a treasure node's worth of items.\n*Success*: You manage to escape, safe and sound.\n*Fail*: The enemy catches up to you. Moderate encounter.\n*Critical Fail*: Same as fail except it is a severe encounter."
+        },
+        {
+            "name": "Balancing Act",
+            "description": "The path forward diverges and you see a treasure chest at the end of one of them. Curiously and cautiously you approach and see that to get to the chest it would require you to balance across a 30 foot wooden beam. The fall looks like it would be 20 feet.\n*Balance check*.\n*Success*: A treasure node reward.\n*Fail*: You fall 30 feet.",
+            "rewardType": "Items"
+        },
+        {
+            "name": "Wrestling Match",
+            "description": "You come across a circular ring 20 feet up. Within it stands a large, burly Dwarven man with a huge red beard and is wearing a light blue leather mask.\n'Who dares step in the ring with the great, the mighty, the amazing Big Red! Come on, come on! Come face the people's champ.'\n*Contested Athletics roll*: Big Red's Athletics bonus is equal to the player's level +4 from levels 1-6, +6 from levels 7-14, +8 from levels 15 onwards.\n*Success*: After a struggle you manage to throw Big Red out of the ring. Receive a boon.\n*Fail*: Big Red lifts you up and throws you off of the ring, you fall 20 feet.",
+            "rewardType": "Boon"
+        },
+        {
+            "name": "Convince the Cleaners",
+            "description": "You come across a group of strange, skinny, humanoids with pure black skin and plain white masks that cover their entire face cleaning up a bloody scene. It looks like the remnants of an unlucky adventuring group. They don't seem to pay you any mind. Most of the items of the party seems to have been destroyed already but they haven't gotten to one backpack yet.\n*Hard relevant DC*: Let the players decide how they want to approach. If they choose violence, however, a severe encounter happens with no gold or boon reward.\n*Success*: You manage to make off with the bag, the cleaners simply continue their work. Treasure node.\n*Fail*: The nimble cleaners pay you no mind and scoop up the bag before you can get to it.",
+            "rewardType": "Items"
+        },
+        {
+            "name": "Emergency Surgery",
+            "description": "You come across an injured Gnome Bard woman. Blood is seeping through a large gash on her ribs.\n'Please, I do not know if it'll return but you need to help me, I can't die here, not like this!'\n*Perform Surgery*: Hard Medicine DC.\n*Critical Success*: She thanks the PC and rewards them with a treasure chest node's worth of items and they manage to escape before whatever it is returns.\n*Success*: The PCs manage to successfully patch her together, however, the enemy returns (moderate encounter).\n*Fail*: She lets off a terrible scream as you fumble on the medical procedure (Elite monster returns).\n*Critical Fail*: Same as fail, however, being so immersed in the procedure and you fail to realize that the monster has returned. You are Off-Guard 2.",
+            "rewardType": "Items"
+        },
+        {
+            "name": "Put on a Show",
+            "description": "You come across a group of frogs staring out at absolutely nothing.\n'Goodness me is this ever so boring. For the love of Gods, do something!'\n*Standard Level DC Performance check*.\n*Critical Success*: 'Cor blimey, what a show! Blessings of the frog be upon you.' Roll a d100 and receive a boon: 1-50: uncommon boon; 51-90: rare boon; 91-100: legendary boon.\n*Success*: 'Well wasn't that ever so pleasant! May the Great Frog smile upon you.' Same as critical success with the following odds: 1-20: common, 21-60: uncommon, 61-90: rare, 91-100: legendary.\n*Fail*: 'I feel worse after having seen that.' No reward.\n*Critical Fail*: 'I hope you never perform again. You are a blight on the entertainment industry.' His insults punch deep at your soul you are enfeebled 1 until the end of the next combat.",
+            "rewardType": "Custom"
+        },
+        {
+            "name": "Bird Loot",
+            "description": "You see a bird fly overhead, rather quickly, carrying a chest.\n*If players attempt to hit the bird use a Hard standard level AC*.",
+            "rewardType": "Items"
+        }
+    ]
+}
