@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using Map;
+using TMPro;
 using UnityEngine;
 
 namespace Assets.Scripts
