@@ -14,7 +14,7 @@ namespace Map {
 
         public Game()
         {
-            partySize = 5;
+            partySize = 4;
             partyLevel = 1;
             environment = Environment.Outerrealm;
             gameName = "default";
