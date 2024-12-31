@@ -63,7 +63,10 @@ public class LoadMenu : MonoBehaviour
         string mysteryLikelihoodJson = JsonConvert.SerializeObject(saveData.mysteryRoomTypeLikelihoods, Formatting.Indented,
                 new JsonSerializerSettings {ReferenceLoopHandling = ReferenceLoopHandling.Ignore});
 
-        PlayerPrefs.SetString("Map", saveData.map.ToJson());
+        string mapsPerLevelJson = JsonConvert.SerializeObject(saveData.mapsPerLevel, Formatting.Indented,
+                new JsonSerializerSettings {ReferenceLoopHandling = ReferenceLoopHandling.Ignore});
+
+        PlayerPrefs.SetString("MapsPerLevel", mapsPerLevelJson);
         PlayerPrefs.SetString("Game", saveData.game.ToJson());
         PlayerPrefs.SetInt("PotionLikelihood", saveData.potionLikelihood);
         PlayerPrefs.SetString("MysteryLikelihood", mysteryLikelihoodJson);

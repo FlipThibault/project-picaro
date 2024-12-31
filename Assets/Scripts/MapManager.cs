@@ -2,6 +2,8 @@
 using UnityEngine;
 using Newtonsoft.Json;
 using Assets.Scripts;
+using System.Collections.Generic;
+using System;
 
 namespace Map
 {
@@ -10,7 +12,9 @@ namespace Map
         public MapConfig config;
         public MapView view;
 
-        public Map CurrentMap { get; private set; }
+        public static Dictionary<int, Map> mapsPerLevel { get; set; }
+
+        public static int currentLevel { get; set; }
 
         private void Start()
         {
@@ -19,14 +23,14 @@ namespace Map
                 string gameJson = PlayerPrefs.GetString("Game");
                 Game game = JsonConvert.DeserializeObject<Game>(gameJson);
                 GameManager.currentGame = game;
+                currentLevel = game.partyLevel;
             }
-            if (PlayerPrefs.HasKey("Map"))
+            if (PlayerPrefs.HasKey("MapsPerLevel"))
             {
-                string mapJson = PlayerPrefs.GetString("Map");
-                Map map = JsonConvert.DeserializeObject<Map>(mapJson);
+                string mapsPerLevelJson = PlayerPrefs.GetString("MapsPerLevel");
+                mapsPerLevel = JsonConvert.DeserializeObject<Dictionary<int, Map>>(mapsPerLevelJson);
 
-                CurrentMap = map;
-                view.ShowMap(map);
+                view.ShowMap(getCurrentMap());
             }
             else
             {
@@ -34,22 +38,49 @@ namespace Map
             }
         }
 
+        public void IncrementLevel() {
+            if(currentLevel == GameManager.currentGame.partyLevel) {
+                int newLevel = GameManager.currentGame.partyLevel + 1;
+                GameManager.currentGame.partyLevel = newLevel;
+                currentLevel = newLevel;
+            } else {
+                currentLevel += 1;
+            }
+            GenerateNewMap();
+            SaveGame();
+        }
+
+        public void GoBackLevel() {
+            currentLevel -= 1;
+            view.ShowMap(mapsPerLevel[currentLevel]);
+        }
+
         public void GenerateNewMap()
         {
-            Map map = MapGenerator.GetMap(config);
-            CurrentMap = map;
-            Debug.Log(map.ToJson());
-            view.ShowMap(map);
+            if(mapsPerLevel == null) {
+                mapsPerLevel = new Dictionary<int, Map>();
+            }
+            if(!mapsPerLevel.ContainsKey(currentLevel)) {
+                Map map = MapGenerator.GetMap(config);
+                mapsPerLevel.Add(currentLevel, map);
+                view.ShowMap(map);
+            } else {
+                view.ShowMap(mapsPerLevel[currentLevel]);
+            }
+        }
+
+        public static Map getCurrentMap() {
+            return mapsPerLevel[currentLevel];
         }
 
         public void SaveGame()
         {
-            if (CurrentMap == null) return;
+            if (getCurrentMap() == null) return;
 
-            string mapJson = JsonConvert.SerializeObject(CurrentMap, Formatting.Indented,
+            string mapsPerLevelJson = JsonConvert.SerializeObject(mapsPerLevel, Formatting.Indented,
                 new JsonSerializerSettings {ReferenceLoopHandling = ReferenceLoopHandling.Ignore});
-            PlayerPrefs.SetString("Map", mapJson);
-            Debug.Log("SAVING MAP: " + mapJson.ToString());
+            PlayerPrefs.SetString("MapsPerLevel", mapsPerLevelJson);
+            Debug.Log("SAVING MAPS: " + mapsPerLevelJson.ToString());
 
             string gameJson = JsonConvert.SerializeObject(GameManager.currentGame, Formatting.Indented, new JsonSerializerSettings { ReferenceLoopHandling = ReferenceLoopHandling.Ignore });
             PlayerPrefs.SetString("Game", gameJson);
@@ -62,11 +93,9 @@ namespace Map
             PlayerPrefs.SetString("MysteryLikelihood", mysteryRoomTypeLikelihoodJson);
             Debug.Log("SAVING MysteryLikelihood: " + mysteryRoomTypeLikelihoodJson.ToString());
 
-            // PlayerPrefs.Save();
-
             string filepath = Application.persistentDataPath + "/" + GameManager.currentGame.gameName + ".json";
             Debug.Log("GAME SAVING AT LOCATION: " + filepath);
-            SaveData saveData = new SaveData(GameManager.currentGame, CurrentMap, PotionGenerator.getCurrentPotionLikelihoodPercentage(), MysteryGenerator.getCurrentMysteryRoomTypeLikelihoodPercentage());
+            SaveData saveData = new SaveData(GameManager.currentGame, mapsPerLevel, PotionGenerator.getCurrentPotionLikelihoodPercentage(), MysteryGenerator.getCurrentMysteryRoomTypeLikelihoodPercentage());
             string saveDataJson = JsonConvert.SerializeObject(saveData, Formatting.Indented, new JsonSerializerSettings { ReferenceLoopHandling = ReferenceLoopHandling.Ignore });
 
             System.IO.File.WriteAllText(filepath, saveDataJson);
