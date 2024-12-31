@@ -1,21 +1,21 @@
 using System.Collections;
+using System.Linq;
 using Assets.Scripts;
 using Map;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-
-namespace Map {
-    
-}
 public class CanvasManager : MonoBehaviour
 {
-    // private MapManager mapManager;
     private TextMeshProUGUI partyInfoText;
+    private TextMeshProUGUI levelProgressText;
     private Button nextLevelButton;
     private Button previousLevelButton;
+    private MapManager mapManager;
 
     private Transform partyInfoTextTransform;
+    private Transform levelProgressTextTransform;
+
     private Transform nextLevelButtonTransform;
     private Transform previousLevelButtonTransform;
 
@@ -31,11 +31,43 @@ public class CanvasManager : MonoBehaviour
 
         if (partyInfoText != null)
         {
-            partyInfoText.text = "Party Name: " + GameManager.currentGame.gameName + " - Party Level: " + GameManager.currentGame.partyLevel + " - Party Size: " + GameManager.currentGame.partySize;
+            updatePartyInfoText();
         }
         else
         {
             Debug.LogError("Could not find PartyInfoText field");
+        }
+    }
+
+    private void initializeLevelProgressTextField() 
+    {
+        if(levelProgressTextTransform == null) {
+            levelProgressTextTransform = transform.Find("CurrentLevelText");
+        }
+        if (levelProgressTextTransform != null)
+        {
+            levelProgressText = levelProgressTextTransform.GetComponent<TextMeshProUGUI>();
+        }
+
+        if (levelProgressText != null)
+        {
+            updateLevelProgressText();
+        }
+        else
+        {
+            Debug.LogError("Could not find CurrentLevelText field");
+        }
+    }
+
+    private void updatePartyInfoText() {
+        if(partyInfoText != null) {
+            partyInfoText.text = "Party Name: " + GameManager.currentGame.gameName + " - Party Level: " + GameManager.currentGame.partyLevel + " - Party Size: " + GameManager.currentGame.partySize;
+        }
+    }
+
+    private void updateLevelProgressText() {
+        if(levelProgressText != null) {
+            levelProgressText.text = MapManager.currentLevel + "/20";
         }
     }
 
@@ -46,6 +78,7 @@ public class CanvasManager : MonoBehaviour
         if (nextLevelButtonTransform != null)
         {
             nextLevelButton = nextLevelButtonTransform.GetComponent<Button>();
+            nextLevelButton.onClick.AddListener(mapManager.IncrementLevel);
         }
     }
 
@@ -56,28 +89,33 @@ public class CanvasManager : MonoBehaviour
         if (previousLevelButtonTransform != null)
         {
             previousLevelButton = previousLevelButtonTransform.GetComponent<Button>();
+            previousLevelButton.onClick.AddListener(mapManager.GoBackLevel);
         }
     }
 
     IEnumerator DelayedAction(float delay)
     {
         Debug.Log("Execution started...");
-        
+        mapManager = FindObjectOfType<MapManager>();
         // Wait for the specified amount of time
         yield return new WaitForSeconds(delay);
         initializePartyInfoTextField();
         initializePreviousLevelButton();
         initializeNextLevelButton();
+        initializeLevelProgressTextField();
     }
 
     void updateNextLevelButtonEnabled() {
-        nextLevelButton.interactable = MapManager.CurrentMap.isComplete;
+        if(nextLevelButton != null && MapManager.getCurrentMap() != null) {
+            nextLevelButton.interactable = MapManager.getCurrentMap().isComplete;
+        }
     }
     void updatePreviousLevelButtonEnabled() {
-        //CONDITION: should be based on previous
-        previousLevelButton.interactable = false;
+        if(previousLevelButton != null && MapManager.getCurrentMap() != null) {
+            previousLevelButton.interactable = MapManager.mapsPerLevel.Keys.First() < MapManager.currentLevel ;
+        }
     }
-        
+
     void Start()
     {        
         StartCoroutine(DelayedAction(0f));
@@ -86,5 +124,7 @@ public class CanvasManager : MonoBehaviour
     void Update() {
         updateNextLevelButtonEnabled();
         updatePreviousLevelButtonEnabled();
+        updatePartyInfoText();
+        updateLevelProgressText();
     }
 }

@@ -30,7 +30,7 @@ namespace Map
 
             // Debug.Log("Selected node: " + mapNode.Node.point);
 
-            if (MapManager.CurrentMap.path.Count == 0)
+            if (MapManager.getCurrentMap().path.Count == 0)
             {
                 // player has not selected the node yet, he can select any of the nodes with y = 0
                 if (mapNode.Node.point.y == 0)
@@ -40,8 +40,8 @@ namespace Map
             }
             else
             {
-                Vector2Int currentPoint = MapManager.CurrentMap.path[MapManager.CurrentMap.path.Count - 1];
-                Node currentNode = MapManager.CurrentMap.GetNode(currentPoint);
+                Vector2Int currentPoint = MapManager.getCurrentMap().path[MapManager.getCurrentMap().path.Count - 1];
+                Node currentNode = MapManager.getCurrentMap().GetNode(currentPoint);
 
                 if (currentNode != null && currentNode.outgoing.Any(point => point.Equals(mapNode.Node.point)))
                     SendPlayerToNode(mapNode);
@@ -53,7 +53,7 @@ namespace Map
         private void SendPlayerToNode(MapNode mapNode)
         {
             Locked = lockAfterSelecting;
-            MapManager.CurrentMap.path.Add(mapNode.Node.point);
+            MapManager.getCurrentMap().path.Add(mapNode.Node.point);
             mapManager.SaveGame();
             view.SetAttainableNodes();
             view.SetLineColors();
@@ -99,7 +99,7 @@ namespace Map
         {
 
             if(mapNode.Node.nodeType == NodeType.Boss) {
-                MapManager.CurrentMap.isComplete = true;
+                MapManager.getCurrentMap().isComplete = true;
             }
             
             Debug.Log("----------------------------------------------------------");
@@ -145,6 +145,9 @@ namespace Map
 
         private void PlayWarningThatNodeCannotBeAccessed(MapNode mapNode)
         {
+               if(mapNode.Node.nodeType == NodeType.Boss) {
+                MapManager.getCurrentMap().isComplete = true;
+            }
             Debug.Log("Selected node cannot be accessed");
             logData(mapNode.Node);
         }
