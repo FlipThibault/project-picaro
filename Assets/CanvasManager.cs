@@ -40,6 +40,6 @@ public class CanvasManager : MonoBehaviour
         
     void Start()
     {        
-        StartCoroutine(DelayedAction(0.01f));
+        StartCoroutine(DelayedAction(0f));
     }
 }
