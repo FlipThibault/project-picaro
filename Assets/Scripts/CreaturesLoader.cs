@@ -8,10 +8,15 @@ namespace Map {
     public enum Environment
     {
         Graveyard,
+        Celestial,
         Dungeon,
         Wilderness,
         Outerrealm,
         Darklands,
+        Hell,
+        Faewild,
+        Water,
+        Holy
     }
 
     [System.Serializable]
