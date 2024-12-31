@@ -2,6 +2,7 @@
 using UnityEngine;
 using Newtonsoft.Json;
 using Assets.Scripts;
+using System.Collections.Generic;
 
 namespace Map
 {
@@ -10,7 +11,7 @@ namespace Map
         public MapConfig config;
         public MapView view;
 
-        public Map CurrentMap { get; private set; }
+        public static Map CurrentMap { get; set; }
 
         private void Start()
         {

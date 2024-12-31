@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Newtonsoft.Json;
 using UnityEngine;
@@ -12,12 +13,15 @@ namespace Map
         public string bossNodeName;
         public string configName; // similar to the act name in Slay the Spire
 
+        public bool isComplete;
+
         public Map(string configName, string bossNodeName, List<Node> nodes, List<Vector2Int> path)
         {
             this.configName = configName;
             this.bossNodeName = bossNodeName;
             this.nodes = nodes;
             this.path = path;
+            this.isComplete = false;
         }
 
         public Node GetBossNode()

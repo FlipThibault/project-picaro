@@ -16,7 +16,7 @@ namespace Map
             LeftToRight
         }
 
-        public MapManager mapManager;
+        // public MapManager mapManager;
         public MapOrientation orientation;
 
         [Tooltip(
@@ -231,7 +231,7 @@ namespace Map
             foreach (MapNode node in MapNodes)
                 node.SetState(NodeStates.Locked);
 
-            if (mapManager.CurrentMap.path.Count == 0)
+            if (MapManager.CurrentMap.path.Count == 0)
             {
                 // we have not started traveling on this map yet, set entire first layer as attainable:
                 foreach (MapNode node in MapNodes.Where(n => n.Node.point.y == 0))
@@ -240,15 +240,15 @@ namespace Map
             else
             {
                 // we have already started moving on this map, first highlight the path as visited:
-                foreach (Vector2Int point in mapManager.CurrentMap.path)
+                foreach (Vector2Int point in MapManager.CurrentMap.path)
                 {
                     MapNode mapNode = GetNode(point);
                     if (mapNode != null)
                         mapNode.SetState(NodeStates.Visited);
                 }
 
-                Vector2Int currentPoint = mapManager.CurrentMap.path[mapManager.CurrentMap.path.Count - 1];
-                Node currentNode = mapManager.CurrentMap.GetNode(currentPoint);
+                Vector2Int currentPoint = MapManager.CurrentMap.path[MapManager.CurrentMap.path.Count - 1];
+                Node currentNode = MapManager.CurrentMap.GetNode(currentPoint);
 
                 // set all the nodes that we can travel to as attainable:
                 foreach (Vector2Int point in currentNode.outgoing)
@@ -268,12 +268,12 @@ namespace Map
 
             // set all lines that are a part of the path to visited color:
             // if we have not started moving on the map yet, leave everything as is:
-            if (mapManager.CurrentMap.path.Count == 0)
+            if (MapManager.CurrentMap.path.Count == 0)
                 return;
 
             // in any case, we mark outgoing connections from the final node with visible/attainable color:
-            Vector2Int currentPoint = mapManager.CurrentMap.path[mapManager.CurrentMap.path.Count - 1];
-            Node currentNode = mapManager.CurrentMap.GetNode(currentPoint);
+            Vector2Int currentPoint = MapManager.CurrentMap.path[MapManager.CurrentMap.path.Count - 1];
+            Node currentNode = MapManager.CurrentMap.GetNode(currentPoint);
 
             foreach (Vector2Int point in currentNode.outgoing)
             {
@@ -282,12 +282,12 @@ namespace Map
                 lineConnection?.SetColor(lineVisitedColor);
             }
 
-            if (mapManager.CurrentMap.path.Count <= 1) return;
+            if (MapManager.CurrentMap.path.Count <= 1) return;
 
-            for (int i = 0; i < mapManager.CurrentMap.path.Count - 1; i++)
+            for (int i = 0; i < MapManager.CurrentMap.path.Count - 1; i++)
             {
-                Vector2Int current = mapManager.CurrentMap.path[i];
-                Vector2Int next = mapManager.CurrentMap.path[i + 1];
+                Vector2Int current = MapManager.CurrentMap.path[i];
+                Vector2Int next = MapManager.CurrentMap.path[i + 1];
                 LineConnection lineConnection = lineConnections.FirstOrDefault(conn => conn.@from.Node.point.Equals(current) &&
                                                                             conn.to.Node.point.Equals(next));
                 lineConnection?.SetColor(lineVisitedColor);
@@ -297,7 +297,7 @@ namespace Map
         protected virtual void SetOrientation()
         {
             ScrollNonUI scrollNonUi = mapParent.GetComponent<ScrollNonUI>();
-            float span = mapManager.CurrentMap.DistanceBetweenFirstAndLastLayers();
+            float span = MapManager.CurrentMap.DistanceBetweenFirstAndLastLayers();
             MapNode bossNode = MapNodes.FirstOrDefault(node => node.Node.nodeType == NodeType.Boss);
             Debug.Log("Map span in set orientation: " + span + " camera aspect: " + cam.aspect);
 
@@ -407,13 +407,13 @@ namespace Map
 
         protected NodeBlueprint GetBlueprint(NodeType type)
         {
-            MapConfig config = GetConfig(mapManager.CurrentMap.configName);
+            MapConfig config = GetConfig(MapManager.CurrentMap.configName);
             return config.nodeBlueprints.FirstOrDefault(n => n.nodeType == type);
         }
 
         protected NodeBlueprint GetBlueprint(string blueprintName)
         {
-            MapConfig config = GetConfig(mapManager.CurrentMap.configName);
+            MapConfig config = GetConfig(MapManager.CurrentMap.configName);
             return config.nodeBlueprints.FirstOrDefault(n => n.name == blueprintName);
         }
     }
