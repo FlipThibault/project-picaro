@@ -14,6 +14,7 @@ namespace Map
         public string configName; // similar to the act name in Slay the Spire
 
         public bool isComplete;
+        public bool isInProgress = false;
 
         public Map(string configName, string bossNodeName, List<Node> nodes, List<Vector2Int> path)
         {
@@ -22,6 +23,7 @@ namespace Map
             this.nodes = nodes;
             this.path = path;
             this.isComplete = false;
+            this.isInProgress = false;
         }
 
         public Node GetBossNode()

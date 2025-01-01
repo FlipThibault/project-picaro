@@ -46,7 +46,7 @@ namespace Map
             } else {
                 currentLevel += 1;
             }
-            GenerateNewMap();
+            UpdateMap(false);
             SaveGame();
         }
 
@@ -55,7 +55,10 @@ namespace Map
             view.ShowMap(mapsPerLevel[currentLevel]);
         }
 
-        public void GenerateNewMap()
+        public void GenerateNewMap() {
+            UpdateMap(true);
+        }
+        public void UpdateMap(bool shouldRegenerateMapForCurrentLevel)
         {
             if(mapsPerLevel == null) {
                 mapsPerLevel = new Dictionary<int, Map>();
@@ -65,6 +68,10 @@ namespace Map
                 mapsPerLevel.Add(currentLevel, map);
                 view.ShowMap(map);
             } else {
+                if(shouldRegenerateMapForCurrentLevel && !mapsPerLevel[currentLevel].isInProgress) {
+                    Map map = MapGenerator.GetMap(config);
+                    mapsPerLevel[currentLevel] = map;
+                }
                 view.ShowMap(mapsPerLevel[currentLevel]);
             }
         }
