@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: f01aab553196aec4a9b8262127d94125
+guid: ea97ac7ca5cdc51469098fb10ecc9123
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6554736390298987251
-    second: cursor_0
+      213: -1243891630147768351
+    second: mystery_0
+  - first:
+      213: 8973821215251442987
+    second: mystery_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +116,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: cursor_0
+      name: mystery_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 750
-        height: 800
+        x: 54
+        y: 20
+        width: 2111
+        height: 2229
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +131,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3fae81cb40a17fa50800000000000000
-      internalID: 6554736390298987251
+      spriteID: 1efe5fd172fccbee0800000000000000
+      internalID: -1243891630147768351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mystery_1
+      rect:
+        serializedVersion: 2
+        x: 2092
+        y: 727
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b2d2de499da698c70800000000000000
+      internalID: 8973821215251442987
       vertices: []
       indices: 
       edges: []
@@ -147,7 +172,9 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      mystery_0: -1243891630147768351
+      mystery_1: 8973821215251442987
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
