@@ -1,13 +1,22 @@
 fileFormatVersion: 2
-guid: 7173154c86bc8ea4488c11d044dc0139
+guid: 457ab4515dc491b4daf13f9e664e61a9
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1169886118290352414
-    second: eliteenemy inverted_0
+      213: 3521376147146544113
+    second: minorenemy_0
   - first:
-      213: 8359298150062592180
-    second: eliteenemy inverted_1
+      213: 8841570861455353468
+    second: minorenemy_1
+  - first:
+      213: 1029559269520165896
+    second: minorenemy_2
+  - first:
+      213: -343421990801985666
+    second: minorenemy_3
+  - first:
+      213: 6861312320517278448
+    second: minorenemy_4
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -116,45 +125,67 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: eliteenemy inverted_0
+      name: minorenemy_0
       rect:
         serializedVersion: 2
-        x: 34
-        y: 24
-        width: 1037
-        height: 1008
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 0
+        y: 187
+        width: 688
+        height: 560
+      alignment: 9
+      pivot: {x: 0.518801, y: 0.37307075}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2e694a316cab3cfe0800000000000000
-      internalID: -1169886118290352414
+      spriteID: 1f31433e2f07ed030800000000000000
+      internalID: 3521376147146544113
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: eliteenemy inverted_1
+      name: minorenemy_1
       rect:
         serializedVersion: 2
-        x: 408
-        y: 61
-        width: 399
-        height: 218
+        x: 1198
+        y: 443
+        width: 6
+        height: 6
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4b09f06c061320470800000000000000
-      internalID: 8359298150062592180
+      spriteID: c76ad759ad193ba70800000000000000
+      internalID: 8841570861455353468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minorenemy_4
+      rect:
+        serializedVersion: 2
+        x: 905
+        y: 204
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0fa8175e337483f50800000000000000
+      internalID: 6861312320517278448
       vertices: []
       indices: 
       edges: []
@@ -163,7 +194,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -173,8 +204,11 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      eliteenemy inverted_0: -1169886118290352414
-      eliteenemy inverted_1: 8359298150062592180
+      minorenemy_0: 3521376147146544113
+      minorenemy_1: 8841570861455353468
+      minorenemy_2: 1029559269520165896
+      minorenemy_3: -343421990801985666
+      minorenemy_4: 6861312320517278448
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

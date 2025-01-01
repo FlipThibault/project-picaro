@@ -1,25 +1,25 @@
 fileFormatVersion: 2
-guid: 95fa87c801925c6408213498037a6774
+guid: cc3fbf070dbdab54090064e57e441f4f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8654233391807914804
-    second: rest_0
+      213: 6840857970483876212
+    second: shop_0
   - first:
-      213: -7467404618137542938
-    second: rest_1
+      213: 7773751018523570969
+    second: shop_1
   - first:
-      213: 1582976679201044387
-    second: rest_2
+      213: 7998681864261443213
+    second: shop_2
   - first:
-      213: -8185128301650095955
-    second: rest_3
+      213: 8407483303641412865
+    second: shop_3
   - first:
-      213: -2804554326959230324
-    second: rest_4
+      213: -4006215097637729
+    second: shop_4
   - first:
-      213: -6581307498303149748
-    second: rest_5
+      213: -3164531279689979881
+    second: shop_5
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -66,7 +66,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 300
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -128,133 +128,133 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: rest_0
+      name: shop_0
       rect:
         serializedVersion: 2
-        x: 44
-        y: 434
-        width: 1357
-        height: 1200
+        x: 0
+        y: 0
+        width: 2341
+        height: 2498
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 433e802fa630a1870800000000000000
-      internalID: 8654233391807914804
+      spriteID: 4715799641c9fee50800000000000000
+      internalID: 6840857970483876212
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: rest_1
+      name: shop_1
       rect:
         serializedVersion: 2
-        x: 1294
-        y: 947
-        width: 9
-        height: 11
+        x: 2544
+        y: 2068
+        width: 8
+        height: 6
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6eedcc550137e5890800000000000000
-      internalID: -7467404618137542938
+      spriteID: 913bd6f3d59e1eb60800000000000000
+      internalID: 7773751018523570969
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: rest_2
+      name: shop_2
       rect:
         serializedVersion: 2
-        x: 74
-        y: 11
-        width: 1200
-        height: 783
+        x: 2542
+        y: 1725
+        width: 11
+        height: 10
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3a7718b17ecd7f510800000000000000
-      internalID: 1582976679201044387
+      spriteID: d8e99a6d6c6010f60800000000000000
+      internalID: 7998681864261443213
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: rest_3
+      name: shop_3
       rect:
         serializedVersion: 2
-        x: 1249
-        y: 514
-        width: 9
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: da056232d25986e80800000000000000
-      internalID: -8185128301650095955
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: rest_4
-      rect:
-        serializedVersion: 2
-        x: 1283
-        y: 512
+        x: 2387
+        y: 205
         width: 7
-        height: 9
+        height: 6
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c827f44e2b83419d0800000000000000
-      internalID: -2804554326959230324
+      spriteID: 105f29815816da470800000000000000
+      internalID: 8407483303641412865
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: rest_5
+      name: shop_4
       rect:
         serializedVersion: 2
-        x: 489
-        y: 58
-        width: 16
-        height: 11
+        x: 2397
+        y: 198
+        width: 8
+        height: 6
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c49a60613bf7aa4a0800000000000000
-      internalID: -6581307498303149748
+      spriteID: f94263c5e54c1fff0800000000000000
+      internalID: -4006215097637729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shop_5
+      rect:
+        serializedVersion: 2
+        x: 1992
+        y: 126
+        width: 13
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 718677941935514d0800000000000000
+      internalID: -3164531279689979881
       vertices: []
       indices: 
       edges: []
@@ -263,7 +263,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 8e4138afcaff8534d97d931684632ab6
     internalID: 0
     vertices: []
     indices: 
@@ -273,12 +273,12 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      rest_0: 8654233391807914804
-      rest_1: -7467404618137542938
-      rest_2: 1582976679201044387
-      rest_3: -8185128301650095955
-      rest_4: -2804554326959230324
-      rest_5: -6581307498303149748
+      shop_0: 6840857970483876212
+      shop_1: 7773751018523570969
+      shop_2: 7998681864261443213
+      shop_3: 8407483303641412865
+      shop_4: -4006215097637729
+      shop_5: -3164531279689979881
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
