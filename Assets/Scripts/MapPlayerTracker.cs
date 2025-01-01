@@ -98,6 +98,8 @@ namespace Map
         private static void EnterNode(MapNode mapNode)
         {
 
+            MapManager.getCurrentMap().isInProgress = true;
+
             if(mapNode.Node.nodeType == NodeType.Boss) {
                 MapManager.getCurrentMap().isComplete = true;
             }
