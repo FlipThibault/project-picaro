@@ -61,7 +61,7 @@ public class CanvasManager : MonoBehaviour
 
     private void updatePartyInfoText() {
         if(partyInfoText != null) {
-            partyInfoText.text = "Party Name: " + GameManager.currentGame.gameName + " - Party Level: " + GameManager.currentGame.partyLevel + " - Party Size: " + GameManager.currentGame.partySize;
+            partyInfoText.text = "Party Name: " + GameManager.currentGame.gameName + " - Party Level: " + GameManager.currentGame.partyLevel + " - Party Size: " + GameManager.currentGame.partySize + " - Environment: " + GameManager.currentGame.environment;
         }
     }
 
