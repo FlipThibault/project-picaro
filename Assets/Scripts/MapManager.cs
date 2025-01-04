@@ -77,7 +77,11 @@ namespace Map
         }
 
         public static Map getCurrentMap() {
-            return mapsPerLevel[currentLevel];
+            try {
+                return mapsPerLevel[currentLevel];
+            } catch(Exception e) {
+                return null;
+            }
         }
 
         public void SaveGame()

@@ -11,6 +11,7 @@ public class CanvasManager : MonoBehaviour
     private TextMeshProUGUI levelProgressText;
     private Button nextLevelButton;
     private Button previousLevelButton;
+    private Button generateLevelButton;
     private MapManager mapManager;
 
     private Transform partyInfoTextTransform;
@@ -18,6 +19,7 @@ public class CanvasManager : MonoBehaviour
 
     private Transform nextLevelButtonTransform;
     private Transform previousLevelButtonTransform;
+    private Transform generateLevelButtonTransform;
 
     private void initializePartyInfoTextField() 
     {
@@ -93,6 +95,16 @@ public class CanvasManager : MonoBehaviour
         }
     }
 
+    void initializeGenerateLevelButton() {
+        if(generateLevelButtonTransform == null) {
+            generateLevelButtonTransform = transform.Find("GenerateButton");
+        }
+        if (generateLevelButtonTransform != null)
+        {
+            generateLevelButton = generateLevelButtonTransform.GetComponent<Button>();
+        }
+    }
+
     IEnumerator DelayedAction(float delay)
     {
         Debug.Log("Execution started...");
@@ -101,6 +113,7 @@ public class CanvasManager : MonoBehaviour
         yield return new WaitForSeconds(delay);
         initializePartyInfoTextField();
         initializePreviousLevelButton();
+        initializeGenerateLevelButton();
         initializeNextLevelButton();
         initializeLevelProgressTextField();
     }
@@ -115,6 +128,12 @@ public class CanvasManager : MonoBehaviour
             previousLevelButton.interactable = MapManager.mapsPerLevel.Keys.First() < MapManager.currentLevel ;
         }
     }
+    void updateGenerateButtonEnabled() {
+        if(generateLevelButton != null && MapManager.getCurrentMap() != null) {
+            Debug.Log("HERE: " + MapManager.mapsPerLevel.ToString());
+            generateLevelButton.interactable = !MapManager.mapsPerLevel[MapManager.currentLevel].isInProgress ;
+        }
+    }
 
     void Start()
     {        
@@ -124,6 +143,7 @@ public class CanvasManager : MonoBehaviour
     void Update() {
         updateNextLevelButtonEnabled();
         updatePreviousLevelButtonEnabled();
+        updateGenerateButtonEnabled();
         updatePartyInfoText();
         updateLevelProgressText();
     }
